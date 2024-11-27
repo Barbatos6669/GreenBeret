@@ -1,0 +1,84 @@
+{ "button": [
+        {
+            "name": "transport",
+            "style": "green",
+            "custom_id": "transport",
+            "children": [
+                {
+                    "category": [
+                        {
+                            "label": "small arms",
+                            "custom_id": "transport_small_arms",
+                            "children": []
+                        },
+                        {
+                            "label": "heavy arms",
+                            "custom_id": "transport_heavy_arms",
+                            "children": []
+                        },
+                        {
+                            "label": "heavy ammunition",
+                            "custom_id": "transport_heavy_ammunition",
+                            "children": []
+                        },
+                        {
+                            "label": "utility",
+                            "custom_id": "transport_utility",
+                            "children": []
+                        },
+                        {
+                            "label": "medical",
+                            "custom_id": "transport_medical",
+                            "children": []
+                        },
+                        {
+                            "label": "uniforms",
+                            "custom_id": "transport_uniforms",
+                            "children": []
+                        },
+                        {
+                            "label": "vehicles",
+                            "custom_id": "transport_vehicles",
+                            "children": []
+                        },
+                        {
+                            "label": "shippable structures",
+                            "custom_id": "transport_shipable_structures",
+                            "children": []
+                        },
+                        {
+                            "label": "raw resources",
+                            "custom_id": "transport_raw_resources",
+                            "children": []
+                        },
+                        {
+                            "label": "refined resources",
+                            "custom_id": "transport_refined_resources",
+                            "children": []
+                        },
+                        {
+                            "label": "technology materials",
+                            "custom_id": "transport_technology_materials",
+                            "children": []
+                        },
+                        {
+                            "label": "liquid resources",
+                            "custom_id": "transport_liquid_resources",
+                            "children": []
+                        },
+                        {
+                            "label": "large materials",
+                            "custom_id": "transport_large_materials",
+                            "children": []
+                        },
+                        {
+                            "label": "supplies",
+                            "custom_id": "transport_supplies",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
