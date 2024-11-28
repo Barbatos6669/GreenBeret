@@ -99,6 +99,9 @@ class SmallArmsButtonView(View):
         self.add_item(Button(label="Green Ash Grenade", style=discord.ButtonStyle.green, custom_id="produce_small_arms_green_ash_grenade"))
         self.add_item(Button(label="12.7mm", style=discord.ButtonStyle.green, custom_id="produce_small_arms_127mm"))
         
+# add all the custom ids for the small arms sub category to a list
+small_arms_custom_ids = ["produce_small_arms_dusk_ce_iii", "produce_small_arms_792mm", "produce_small_arms_catara_mo_ii", "produce_small_arms_krn886_127_gast_machine_gun", "produce_small_arms_bomastone_granade", "produce_small_arms_8mm", "produce_small_arms_cometa_t2_9", "produce_small_arms_44", "produce_small_arms_catena_rt_iv_autorifle", "produce_small_arms_argenti_r_ii_rifle", "produce_small_arms_volta_r_i_repeater", "produce_small_arms_fuscina_pi_i", "produce_small_arms_krr2_790_omen", "produce_small_arms_krr3_792_auger", "produce_small_arms_762", "produce_small_arms_krd1_750_dragonfly", "produce_small_arms_buckshot", "produce_small_arms_the_pitch_gun_mc_v", "produce_small_arms_lionclaw_mc_viii", "produce_small_arms_9mm", "produce_small_arms_pt_815_smoke_granade", "produce_small_arms_green_ash_grenade", "produce_small_arms_127mm"]
+        
 # Sub category for Heavy arms item buttons (typhon ra.xii, 20mm, venom c.iii 35, bane 45, ap/rpg, arc/rpg, molten wind v.11 flame torch, klg901-2 lunair f, mounted fissura gd.i, tremola grenade gpb-1, lamentum mm.iv, daucus isg.iii, 30mm, cremari mortar, flare mortar shell, shrapnel mortar sheel, mortar sheel, ignifist 30, mammon 91-b, anti-tank sticky bomb, rpg)
 class HeavyArmsButtonView(View):
     def __init__(self):
@@ -124,7 +127,10 @@ class HeavyArmsButtonView(View):
         self.add_item(Button(label="Mammon 91-B", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_mammon_91_b"))
         self.add_item(Button(label="Anti-Tank Sticky Bomb", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_anti_tank_sticky_bomb"))
         self.add_item(Button(label="RPG", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_rpg"))
-        
+
+# add all the custom ids for the heavy arms sub category to a list
+heavy_arms_custom_ids = ["produce_heavy_arms_typhon_ra_xii", "produce_heavy_arms_20mm", "produce_heavy_arms_venom_c_iii_35", "produce_heavy_arms_bane_45", "produce_heavy_arms_ap_rpg", "produce_heavy_arms_arc_rpg", "produce_heavy_arms_molten_wind_v_11_flame_torch", "produce_heavy_arms_klg901_2_lunair_f", "produce_heavy_arms_mounted_fissura_gd_i", "produce_heavy_arms_tremola_grenade_gpb_1", "produce_heavy_arms_lamentum_mm_iv", "produce_heavy_arms_daucus_isg_iii", "produce_heavy_arms_30mm", "produce_heavy_arms_cremari_mortar", "produce_heavy_arms_flare_mortar_shell", "produce_heavy_arms_shrapnel_mortar_shell", "produce_heavy_arms_mortar_shell", "produce_heavy_arms_ignifist_30", "produce_heavy_arms_mammon_91_b", "produce_heavy_arms_anti_tank_sticky_bomb", "produce_heavy_arms_rpg"]
+       
 # Sub category for Heavy Ammunition item buttons (150mm, 120mm, 250mm, 68mm, 40mm)
 class HeavyAmmunitionButtonView(View):
     def __init__(self):
@@ -134,6 +140,9 @@ class HeavyAmmunitionButtonView(View):
         self.add_item(Button(label="250mm", style=discord.ButtonStyle.green, custom_id="produce_heavy_ammunition_250mm"))
         self.add_item(Button(label="68mm", style=discord.ButtonStyle.green, custom_id="produce_heavy_ammunition_68mm"))
         self.add_item(Button(label="40mm", style=discord.ButtonStyle.green, custom_id="produce_heavy_ammunition_40mm"))
+
+# add all the custom ids for the heavy ammunition sub category to a list
+heavy_ammunition_custom_ids = ["produce_heavy_ammunition_150mm", "produce_heavy_ammunition_120mm", "produce_heavy_ammunition_250mm", "produce_heavy_ammunition_68mm", "produce_heavy_ammunition_40mm"] 
         
 # Sub category for Utility item buttons (barbed wire, buckhorn ccq-18, binoculars, hydra's whisper, havoc charge, molten wind v.ii ammo, listening kit, metal beam, radio backpack, sandbag, havoc charge denotator, shovel, sledge hammer, tripod, wind stock, wrench, water bucket, gas mansk, gas mask filter, radio)
 class UtilityButtonView(View):
@@ -159,13 +168,19 @@ class UtilityButtonView(View):
         self.add_item(Button(label="Gas Mask", style=discord.ButtonStyle.green, custom_id="produce_utility_gas_mask"))
         self.add_item(Button(label="Gas Mask Filter", style=discord.ButtonStyle.green, custom_id="produce_utility_gas_mask_filter"))
         self.add_item(Button(label="Radio", style=discord.ButtonStyle.green, custom_id="produce_utility_radio"))
+
+# add all the custom ids for the utility sub category to a list
+utility_custom_ids = ["produce_utility_barbed_wire", "produce_utility_buckhorn_ccq_18", "produce_utility_binoculars", "produce_utility_hydras_whisper", "produce_utility_havoc_charge", "produce_utility_molten_wind_v_ii_ammo", "produce_utility_listening_kit", "produce_utility_metal_beam", "produce_utility_radio_backpack", "produce_utility_sandbag", "produce_utility_havoc_charge_denotator", "produce_utility_shovel", "produce_utility_sledge_hammer", "produce_utility_tripod", "produce_utility_wind_stock", "produce_utility_wrench", "produce_utility_water_bucket", "produce_utility_gas_mask", "produce_utility_gas_mask_filter", "produce_utility_radio"]
         
 # Sub category for Resource item buttons (maintenance supplies)
 class ResourceButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)
         self.add_item(Button(label="Maintenance Supplies", style=discord.ButtonStyle.green, custom_id="produce_resource_maintenance_supplies"))
-        
+
+# add all the custom ids for the resource sub category to a list
+resource_custom_ids = ["produce_resource_maintenance_supplies"]
+  
 # Sub category for Medical item buttons (bandage, first aid kit, trauma kit, blood plasma, soldier supplies)
 class MedicalButtonView(View):
     def __init__(self):
@@ -175,7 +190,10 @@ class MedicalButtonView(View):
         self.add_item(Button(label="Trauma Kit", style=discord.ButtonStyle.green, custom_id="produce_medical_trauma_kit"))
         self.add_item(Button(label="Blood Plasma", style=discord.ButtonStyle.green, custom_id="produce_medical_blood_plasma"))
         self.add_item(Button(label="Soldier Supplies", style=discord.ButtonStyle.green, custom_id="produce_medical_soldier_supplies"))
-        
+
+# add all the custom ids for the medical sub category to a list
+medical_custom_ids = ["produce_medical_bandage", "produce_medical_first_aid_kit", "produce_medical_trauma_kit", "produce_medical_blood_plasma", "produce_medical_soldier_supplies"]
+      
 # Sub category for Uniforms item buttons (vilian flak vest, fabri rucksack, grenadier's baldric, medic fatigues, officialis attire, legionary's oilcoat, recon camo, heavy topcoat, tankman's coveralls)
 class UniformsButtonView(View):
     def __init__(self):
@@ -189,7 +207,10 @@ class UniformsButtonView(View):
         self.add_item(Button(label="Recon Camo", style=discord.ButtonStyle.green, custom_id="produce_uniforms_recon_camo"))
         self.add_item(Button(label="Heavy Topcoat", style=discord.ButtonStyle.green, custom_id="produce_uniforms_heavy_topcoat"))
         self.add_item(Button(label="Tankman's Coveralls", style=discord.ButtonStyle.green, custom_id="produce_uniforms_tankmans_coveralls"))
-        
+
+# add all the custom ids for the uniforms sub category to a list
+uniforms_custom_ids = ["produce_uniforms_vilian_flak_vest", "produce_uniforms_fabri_rucksack", "produce_uniforms_grenadiers_baldric", "produce_uniforms_medic_fatigues", "produce_uniforms_officialis_attire", "produce_uniforms_legionarys_oilcoat", "produce_uniforms_recon_camo", "produce_uniforms_heavy_topcoat", "produce_uniforms_tankmans_coveralls"]
+      
 # Sub category for Vehicles item buttons (r-12- salus ambulance, t3 xiphos, r-15- chariot, aa-2 battering ram, g40 sagittarii, bms - packmule flatbed, hh-a javelin, ab-8 acheron, 120-68 koronides field gun, hc-2 scorpion, h-5 hatchet, 86k-a bardiche, 90t-v nemesis, 85k-b falchion, 03mm caster, r-5 atlas hauler, rr-3 stolon tanker, r-1 hauler, t12 actaeon tankette, uv-05a argonaut, roster 0 junkwagon)
 class VehiclesButtonView(View):
     def __init__(self):
@@ -215,7 +236,10 @@ class VehiclesButtonView(View):
         self.add_item(Button(label="T12 Actaeon Tankette", style=discord.ButtonStyle.green, custom_id="produce_vehicles_t12_actaeon_tankette"))
         self.add_item(Button(label="UV-05A Argonaut", style=discord.ButtonStyle.green, custom_id="produce_vehicles_uv_05a_argonaut"))
         self.add_item(Button(label="Roster 0 Junkwagon", style=discord.ButtonStyle.green, custom_id="produce_vehicles_roster_0_junkwagon"))
-        
+
+# add all the custom ids for the vehicles sub category to a list
+vehicles_custom_ids = ["produce_vehicles_r_12_salus_ambulance", "produce_vehicles_t3_xiphos", "produce_vehicles_r_15_chariot", "produce_vehicles_aa_2_battering_ram", "produce_vehicles_g40_sagittarii", "produce_vehicles_bms_packmule_flatbed", "produce_vehicles_hh_a_javelin", "produce_vehicles_ab_8_acheron", "produce_vehicles_120_68_koronides_field_gun", "produce_vehicles_hc_2_scorpion", "produce_vehicles_h_5_hatchet", "produce_vehicles_86k_a_bardiche", "produce_vehicles_90t_v_nemesis", "produce_vehicles_85k_b_falchion", "produce_vehicles_03mm_caster", "produce_vehicles_r_5_atlas_hauler", "produce_vehicles_rr_3_stolon_tanker", "produce_vehicles_r_1_hauler", "produce_vehicles_t12_actaeon_tankette", "produce_vehicles_uv_05a_argonaut", "produce_vehicles_roster_0_junkwagon"]
+
 # Sub category for Shippable structure (50-500 thunderbolt cannon, material pallet, resource container, shipping container, dae 1o-3 polybolos, concrete mixer, liquid container) 
 class ShippableStructureButtonView(View):
     def __init__(self):
@@ -228,6 +252,9 @@ class ShippableStructureButtonView(View):
         self.add_item(Button(label="Concrete Mixer", style=discord.ButtonStyle.green, custom_id="produce_shippable_structure_concrete_mixer"))
         self.add_item(Button(label="Liquid Container", style=discord.ButtonStyle.green, custom_id="produce_shippable_structure_liquid_container"))                  
 
+# add all the custom ids for the shippable structure sub category to a list
+shippable_structure_custom_ids = ["produce_shippable_structure_50_500_thunderbolt_cannon", "produce_shippable_structure_material_pallet", "produce_shippable_structure_resource_container", "produce_shippable_structure_shipping_container", "produce_shippable_structure_dae_1o_3_polybolos", "produce_shippable_structure_concrete_mixer", "produce_shippable_structure_liquid_container"]
+
 # crate quantity selesction, 10, 20, 30, 40, 50
 class CrateQuantityButtonView(View):
     def __init__(self, resource):
@@ -238,8 +265,6 @@ class CrateQuantityButtonView(View):
         self.add_item(Button(label="30", style=discord.ButtonStyle.green, custom_id=f"{resource}produce_crate_30"))
         self.add_item(Button(label="40", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_40"))
         self.add_item(Button(label="50", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_50"))
-        
-
         
 # Buttons for delivery options
 class DeliveryButtonView(View):
