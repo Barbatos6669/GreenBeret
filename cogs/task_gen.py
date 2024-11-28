@@ -29,6 +29,13 @@ uniforms_custom_ids = ["produce_uniforms_vilian_flak_vest", "produce_uniforms_fa
 vehicles_custom_ids = ["produce_vehicles_r_12_salus_ambulance", "produce_vehicles_t3_xiphos", "produce_vehicles_r_15_chariot", "produce_vehicles_aa_2_battering_ram", "produce_vehicles_g40_sagittarii", "produce_vehicles_bms_packmule_flatbed", "produce_vehicles_hh_a_javelin", "produce_vehicles_ab_8_acheron", "produce_vehicles_120_68_koronides_field_gun", "produce_vehicles_hc_2_scorpion", "produce_vehicles_h_5_hatchet", "produce_vehicles_86k_a_bardiche", "produce_vehicles_90t_v_nemesis", "produce_vehicles_85k_b_falchion", "produce_vehicles_03mm_caster", "produce_vehicles_r_5_atlas_hauler", "produce_vehicles_rr_3_stolon_tanker", "produce_vehicles_r_1_hauler", "produce_vehicles_t12_actaeon_tankette", "produce_vehicles_uv_05a_argonaut", "produce_vehicles_roster_0_junkwagon"]
 shippable_structure_custom_ids = ["produce_shippable_structure_50_500_thunderbolt_cannon", "produce_shippable_structure_material_pallet", "produce_shippable_structure_resource_container", "produce_shippable_structure_shipping_container", "produce_shippable_structure_dae_1o_3_polybolos", "produce_shippable_structure_concrete_mixer", "produce_shippable_structure_liquid_container"]
 
+crate_quantity_custom_ids = [f"{item}_produce_crate_10" for item in small_arms_custom_ids + heavy_arms_custom_ids + heavy_ammunition_custom_ids + utility_custom_ids + resource_custom_ids + medical_custom_ids + uniforms_custom_ids] + \
+                            [f"{item}_produce_crate_20" for item in small_arms_custom_ids + heavy_arms_custom_ids + heavy_ammunition_custom_ids + utility_custom_ids + resource_custom_ids + medical_custom_ids + uniforms_custom_ids] + \
+                            [f"{item}_produce_crate_30" for item in small_arms_custom_ids + heavy_arms_custom_ids + heavy_ammunition_custom_ids + utility_custom_ids + resource_custom_ids + medical_custom_ids + uniforms_custom_ids] + \
+                            [f"{item}_produce_crate_40" for item in small_arms_custom_ids + heavy_arms_custom_ids + heavy_ammunition_custom_ids + utility_custom_ids + resource_custom_ids + medical_custom_ids + uniforms_custom_ids] + \
+                            [f"{item}_produce_crate_50" for item in small_arms_custom_ids + heavy_arms_custom_ids + heavy_ammunition_custom_ids + utility_custom_ids + resource_custom_ids + medical_custom_ids + uniforms_custom_ids]
+
+
 # TaskDashboardCog class
 class TaskDashboardCog(commands.Cog):
     def __init__(self, bot):
@@ -140,7 +147,7 @@ class TaskDashboardCog(commands.Cog):
                 f"You selected **{custom_id}**. Choose a delivery location:",
                 view=DeliveryButtonView(),
                 ephemeral=True
-            )
+            )        
         elif custom_id in produce_custom_ids:
             view_mapping = {
                 "produce_small_arms": SmallArmsButtonView,
@@ -168,6 +175,12 @@ class TaskDashboardCog(commands.Cog):
                 f"You selected **{custom_id}**. Choose a quantity:",
                 view=CrateQuantityButtonView(custom_id),
                 ephemeral=True
+            )
+        elif custom_id in crate_quantity_custom_ids:
+            await interaction.response.send_message(
+            f"You selected **{custom_id}**. Choose a delivery location:",
+            view=DeliveryButtonView(),
+            ephemeral=True
             )
         else:
             await interaction.response.send_message(

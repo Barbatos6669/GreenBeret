@@ -266,6 +266,9 @@ class CrateQuantityButtonView(View):
         self.add_item(Button(label="40", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_40"))
         self.add_item(Button(label="50", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_50"))
         
+# add all the custom ids for the crate quantity selection to a list
+crate_quantity_custom_ids = ["produce_crate_10", "produce_crate_20", "produce_crate_30", "produce_crate_40", "produce_crate_50"]
+        
 # Buttons for delivery options
 class DeliveryButtonView(View):
     def __init__(self):
