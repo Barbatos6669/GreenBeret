@@ -132,7 +132,7 @@ class TaskDashboardCog(commands.Cog):
             )
         elif custom_id in scroop_quantity_custom_ids:
             await interaction.response.send_message(
-                f"You selected **{custom_id}**. Choose a delivery location:",
+                f"You selected **{custom_id}**. Choose a delivery location: this will save the prior selections and send a delivery request to the logistics team",
                 view=DeliveryButtonView(),
                 ephemeral=True
             )
@@ -144,7 +144,7 @@ class TaskDashboardCog(commands.Cog):
             )
         elif custom_id in refine_quantity_custom_ids:
             await interaction.response.send_message(
-                f"You selected **{custom_id}**. Choose a delivery location:",
+                f"You selected **{custom_id}**. Choose a delivery location: this will save the prior selections and send a delivery request to the logistics team",
                 view=DeliveryButtonView(),
                 ephemeral=True
             )        
@@ -178,9 +178,28 @@ class TaskDashboardCog(commands.Cog):
             )
         elif custom_id in crate_quantity_custom_ids:
             await interaction.response.send_message(
-            f"You selected **{custom_id}**. Choose a delivery location:",
+            f"You selected **{custom_id}**. Choose a delivery location: this will save the prior selections and send a delivery request to the logistics team",
             view=DeliveryButtonView(),
             ephemeral=True
+            )
+        elif custom_id in vehicles_custom_ids:
+            await interaction.response.send_message(
+            f"You selected **{custom_id}**. Choose a delivery location: this will save the prior selections and send a delivery request to the logistics team",
+            view=DeliveryButtonView(),
+            ephemeral=True
+            )
+        elif custom_id in shippable_structure_custom_ids:
+            await interaction.response.send_message(
+            f"You selected **{custom_id}**. Choose a delivery location: this will save the prior selections and send a delivery request to the logistics team",
+            view=DeliveryButtonView(),
+            ephemeral=True
+            )
+        elif custom_id == "transport":
+            # Show Transport resource selection
+            await interaction.response.send_message(
+                "You selected **Transport**. this feature will contain a form to fill out a transport request",
+                #view=TransportButtonView(),
+                ephemeral=True
             )
         else:
             await interaction.response.send_message(

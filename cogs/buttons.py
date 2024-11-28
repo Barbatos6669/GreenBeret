@@ -262,7 +262,7 @@ class CrateQuantityButtonView(View):
         self.resource = resource  # Pass resource type for context
         self.add_item(Button(label="10", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_10"))
         self.add_item(Button(label="20", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_20"))
-        self.add_item(Button(label="30", style=discord.ButtonStyle.green, custom_id=f"{resource}produce_crate_30"))
+        self.add_item(Button(label="30", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_30"))
         self.add_item(Button(label="40", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_40"))
         self.add_item(Button(label="50", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_50"))
         
