@@ -1,0 +1,30 @@
+{
+    "Alpha": {
+        "name": "Alpha",
+        "hex": "hex1",
+        "location": "loc1",
+        "password": "123456",
+        "message_id": 1311459706006409339
+    },
+    "Bravo": {
+        "name": "Bravo",
+        "hex": "hex2",
+        "location": "loc2",
+        "password": "123456",
+        "message_id": 1311459793294069792
+    },
+    "Charlie": {
+        "name": "Charlie",
+        "hex": "hex3",
+        "location": "loc3",
+        "password": "123456",
+        "message_id": 1311459957874622504
+    },
+    "Delta": {
+        "name": "Delta",
+        "hex": "hex4",
+        "location": "loc4",
+        "password": "123456",
+        "message_id": 1311460066410496000
+    }
+}

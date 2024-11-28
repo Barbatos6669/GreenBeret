@@ -26,8 +26,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 COGS_TO_LOAD = [
     "cogs.task_gen",
     "cogs.task_scroop",
-    "cogs.stockpile"
-    
+    "cogs.stockpile"    
 ]
 
 async def load_extensions():

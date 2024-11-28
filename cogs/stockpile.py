@@ -3,13 +3,13 @@ from discord.ext import commands
 from discord.ui import Button, View, Modal, TextInput
 import json
 
-
+# Create stockpile button
 class StockpileView(View):
     def __init__(self):
         super().__init__(timeout=None)
         self.add_item(Button(label="Create Stockpile", style=discord.ButtonStyle.green, custom_id="create_stockpile"))
 
-
+# Creates a form for the stock pile to fill out generl information
 class StockpileModal(Modal):
     def __init__(self, cog, channel):
         super().__init__(title="Create Stockpile")
@@ -54,7 +54,7 @@ class StockpileModal(Modal):
 
             await interaction.response.send_message(f"Stockpile {name} created successfully.", ephemeral=True)
 
-
+# Allows a user to delete the stockpile from the chat and the json dynamically
 class StockpileActionView(View):
     def __init__(self, cog, stockpile_name):
         super().__init__(timeout=None)
@@ -63,7 +63,7 @@ class StockpileActionView(View):
 
         self.add_item(Button(label="Delete", style=discord.ButtonStyle.danger, custom_id=f"delete_{stockpile_name}"))
 
-
+# Main class for the stockpile cog
 class StockpileCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -80,6 +80,7 @@ class StockpileCog(commands.Cog):
         with open("data/stockpiles.json", "w") as f:
             json.dump(self.stockpiles, f, indent=4)
 
+    # Set up the dashboard message in all guilds on bot startup
     @commands.Cog.listener()
     async def on_ready(self):
         for guild in self.bot.guilds:
@@ -103,6 +104,7 @@ class StockpileCog(commands.Cog):
                 await channel.send(embed=embed, view=view)
                 print(f"Dashboard message set up in {guild.name}.")
 
+    # Allows the user to interact with the stockpile
     @commands.Cog.listener()
     async def on_interaction(self, interaction: discord.Interaction):
         custom_id = interaction.data.get("custom_id")
@@ -119,6 +121,6 @@ class StockpileCog(commands.Cog):
                     f"Stockpile '{stockpile_name}' deleted successfully.", ephemeral=True
                 )
 
-
+# Set up the cog                       
 async def setup(bot):
     await bot.add_cog(StockpileCog(bot))
