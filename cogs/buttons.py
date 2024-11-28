@@ -17,30 +17,30 @@ class DashboardView(View):
 class ScroopButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)  # Persistent view
-        self.add_item(Button(label="Salvage", style=discord.ButtonStyle.green, custom_id="salvage"))
-        self.add_item(Button(label="Components", style=discord.ButtonStyle.green, custom_id="components"))
-        self.add_item(Button(label="Sulfur", style=discord.ButtonStyle.green, custom_id="sulfur"))
-        self.add_item(Button(label="Coal", style=discord.ButtonStyle.green, custom_id="coal"))
+        self.add_item(Button(label="Salvage", style=discord.ButtonStyle.secondary, custom_id="salvage"))
+        self.add_item(Button(label="Components", style=discord.ButtonStyle.secondary, custom_id="components"))
+        self.add_item(Button(label="Sulfur", style=discord.ButtonStyle.secondary, custom_id="sulfur"))
+        self.add_item(Button(label="Coal", style=discord.ButtonStyle.secondary, custom_id="coal"))
 
 # Buttons for Scroop resource quantity selection, will also be used for refine quantity selection to save time
 class ScroopQuantityButtonView(View):
     def __init__(self, resource):
         super().__init__(timeout=None)  # Persistent view
         self.resource = resource  # Pass resource type for context
-        self.add_item(Button(label="1500", style=discord.ButtonStyle.green, custom_id=f"{resource}_scroop_1500"))
-        self.add_item(Button(label="2500", style=discord.ButtonStyle.green, custom_id=f"{resource}_scroop_2500"))
-        self.add_item(Button(label="5000", style=discord.ButtonStyle.green, custom_id=f"{resource}_scroop_5000"))
+        self.add_item(Button(label="1500", style=discord.ButtonStyle.secondary, custom_id=f"{resource}_scroop_1500"))
+        self.add_item(Button(label="2500", style=discord.ButtonStyle.secondary, custom_id=f"{resource}_scroop_2500"))
+        self.add_item(Button(label="5000", style=discord.ButtonStyle.secondary, custom_id=f"{resource}_scroop_5000"))
         
 # Buttons for Refine options
 class RefineButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)  # Persistent view
-        self.add_item(Button(label="Basic Materials", style=discord.ButtonStyle.green, custom_id="refine_basic_materials"))
-        self.add_item(Button(label="Diesel", style=discord.ButtonStyle.green, custom_id="refine_diesel"))
-        self.add_item(Button(label="Explosive Powder", style=discord.ButtonStyle.green, custom_id="refine_explosive_powder"))
-        self.add_item(Button(label="Refined Materials", style=discord.ButtonStyle.green, custom_id="refine_refined_materials"))
-        self.add_item(Button(label="Heavy Explosive Powder", style=discord.ButtonStyle.green, custom_id="refine_heavy_explosive_powder"))
-        self.add_item(Button(label="Gravel", style=discord.ButtonStyle.green, custom_id="refine_gravel"))
+        self.add_item(Button(label="Basic Materials", style=discord.ButtonStyle.secondary, custom_id="refine_basic_materials"))
+        self.add_item(Button(label="Diesel", style=discord.ButtonStyle.secondary, custom_id="refine_diesel"))
+        self.add_item(Button(label="Explosive Powder", style=discord.ButtonStyle.secondary, custom_id="refine_explosive_powder"))
+        self.add_item(Button(label="Refined Materials", style=discord.ButtonStyle.secondary, custom_id="refine_refined_materials"))
+        self.add_item(Button(label="Heavy Explosive Powder", style=discord.ButtonStyle.secondary, custom_id="refine_heavy_explosive_powder"))
+        self.add_item(Button(label="Gravel", style=discord.ButtonStyle.secondary, custom_id="refine_gravel"))
         
 # refine button custom ids list
 refine_custom_ids = ["refine_basic_materials", "refine_diesel", "refine_explosive_powder", "refine_refined_materials", "refine_heavy_explosive_powder", "refine_gravel"]
@@ -50,23 +50,23 @@ class RefineQuantityButtonView(View):
     def __init__(self, resource):
         super().__init__(timeout=None)  # Persistent view
         self.resource = resource  # Pass resource type for context
-        self.add_item(Button(label="1500", style=discord.ButtonStyle.green, custom_id=f"{resource}_refine_1500"))
-        self.add_item(Button(label="2500", style=discord.ButtonStyle.green, custom_id=f"{resource}_refine_2500"))
-        self.add_item(Button(label="5000", style=discord.ButtonStyle.green, custom_id=f"{resource}_refine_5000"))
+        self.add_item(Button(label="1500", style=discord.ButtonStyle.secondary, custom_id=f"{resource}_refine_1500"))
+        self.add_item(Button(label="2500", style=discord.ButtonStyle.secondary, custom_id=f"{resource}_refine_2500"))
+        self.add_item(Button(label="5000", style=discord.ButtonStyle.secondary, custom_id=f"{resource}_refine_5000"))
         
 # sub category selection for when a user selects produce, (Small Arms, Heavy Arms, Heavy Ammunition, Utility, Medical, Resource, Uniforms, Vehicles, Shippable Structure)
 class ProduceButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)  # Persistent view
-        self.add_item(Button(label="Small Arms", style=discord.ButtonStyle.green, custom_id="produce_small_arms"))
-        self.add_item(Button(label="Heavy Arms", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms"))
-        self.add_item(Button(label="Heavy Ammunition", style=discord.ButtonStyle.green, custom_id="produce_heavy_ammunition"))
-        self.add_item(Button(label="Utility", style=discord.ButtonStyle.green, custom_id="produce_utility"))
-        self.add_item(Button(label="Resource", style=discord.ButtonStyle.green, custom_id="produce_resource"))
-        self.add_item(Button(label="Medical", style=discord.ButtonStyle.green, custom_id="produce_medical"))        
-        self.add_item(Button(label="Uniforms", style=discord.ButtonStyle.green, custom_id="produce_uniforms"))
-        self.add_item(Button(label="Vehicles", style=discord.ButtonStyle.green, custom_id="produce_vehicles"))
-        self.add_item(Button(label="Shippable Structure", style=discord.ButtonStyle.green, custom_id="produce_shippable_structure"))
+        self.add_item(Button(label="Small Arms", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms"))
+        self.add_item(Button(label="Heavy Arms", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms"))
+        self.add_item(Button(label="Heavy Ammunition", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_ammunition"))
+        self.add_item(Button(label="Utility", style=discord.ButtonStyle.secondary, custom_id="produce_utility"))
+        self.add_item(Button(label="Resource", style=discord.ButtonStyle.secondary, custom_id="produce_resource"))
+        self.add_item(Button(label="Medical", style=discord.ButtonStyle.secondary, custom_id="produce_medical"))        
+        self.add_item(Button(label="Uniforms", style=discord.ButtonStyle.secondary, custom_id="produce_uniforms"))
+        self.add_item(Button(label="Vehicles", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles"))
+        self.add_item(Button(label="Shippable Structure", style=discord.ButtonStyle.secondary, custom_id="produce_shippable_structure"))
 
 # create a list from all the custom ids for the produce sub category
 produce_custom_ids = ["produce_small_arms", "produce_heavy_arms", "produce_heavy_ammunition", "produce_utility", "produce_resource", "produce_medical", "produce_uniforms", "produce_vehicles", "produce_shippable_structure"]
@@ -75,29 +75,29 @@ produce_custom_ids = ["produce_small_arms", "produce_heavy_arms", "produce_heavy
 class SmallArmsButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)
-        self.add_item(Button(label="Dusk CE.III", style=discord.ButtonStyle.green, custom_id="produce_small_arms_dusk_ce_iii"))
-        self.add_item(Button(label="7.92mm", style=discord.ButtonStyle.green, custom_id="produce_small_arms_792mm"))
-        self.add_item(Button(label="Catara MO.II", style=discord.ButtonStyle.green, custom_id="produce_small_arms_catara_mo_ii"))
-        self.add_item(Button(label="KRN886-127 Gast Machine Gun", style=discord.ButtonStyle.green, custom_id="produce_small_arms_krn886_127_gast_machine_gun"))
-        self.add_item(Button(label="Bomastone Granade", style=discord.ButtonStyle.green, custom_id="produce_small_arms_bomastone_granade"))
-        self.add_item(Button(label="8mm", style=discord.ButtonStyle.green, custom_id="produce_small_arms_8mm"))
-        self.add_item(Button(label="Cometa T2-9", style=discord.ButtonStyle.green, custom_id="produce_small_arms_cometa_t2_9"))
-        self.add_item(Button(label=".44", style=discord.ButtonStyle.green, custom_id="produce_small_arms_44"))
-        self.add_item(Button(label="Catena RT.IV Autorifle", style=discord.ButtonStyle.green, custom_id="produce_small_arms_catena_rt_iv_autorifle"))
-        self.add_item(Button(label="Argenti R.II Rifle", style=discord.ButtonStyle.green, custom_id="produce_small_arms_argenti_r_ii_rifle"))
-        self.add_item(Button(label="Volta R.I Repeater", style=discord.ButtonStyle.green, custom_id="produce_small_arms_volta_r_i_repeater"))
-        self.add_item(Button(label="Fuscina PI.I", style=discord.ButtonStyle.green, custom_id="produce_small_arms_fuscina_pi_i"))
-        self.add_item(Button(label="KRR2-790 Omen", style=discord.ButtonStyle.green, custom_id="produce_small_arms_krr2_790_omen"))
-        self.add_item(Button(label="KRR3-792 Auger", style=discord.ButtonStyle.green, custom_id="produce_small_arms_krr3_792_auger"))
-        self.add_item(Button(label="7.62", style=discord.ButtonStyle.green, custom_id="produce_small_arms_762"))
-        self.add_item(Button(label="KRD1-750 Dragonfly", style=discord.ButtonStyle.green, custom_id="produce_small_arms_krd1_750_dragonfly"))
-        self.add_item(Button(label="Buckshot", style=discord.ButtonStyle.green, custom_id="produce_small_arms_buckshot"))
-        self.add_item(Button(label="The Pitch Gun MC.V", style=discord.ButtonStyle.green, custom_id="produce_small_arms_the_pitch_gun_mc_v"))
-        self.add_item(Button(label="Lionclaw MC.VIII", style=discord.ButtonStyle.green, custom_id="produce_small_arms_lionclaw_mc_viii"))
-        self.add_item(Button(label="9mm", style=discord.ButtonStyle.green, custom_id="produce_small_arms_9mm"))
-        self.add_item(Button(label="PT-815 Smoke Granade", style=discord.ButtonStyle.green, custom_id="produce_small_arms_pt_815_smoke_granade"))
-        self.add_item(Button(label="Green Ash Grenade", style=discord.ButtonStyle.green, custom_id="produce_small_arms_green_ash_grenade"))
-        self.add_item(Button(label="12.7mm", style=discord.ButtonStyle.green, custom_id="produce_small_arms_127mm"))
+        self.add_item(Button(label="Dusk CE.III", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_dusk_ce_iii"))
+        self.add_item(Button(label="7.92mm", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_792mm"))
+        self.add_item(Button(label="Catara MO.II", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_catara_mo_ii"))
+        self.add_item(Button(label="KRN886-127 Gast Machine Gun", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_krn886_127_gast_machine_gun"))
+        self.add_item(Button(label="Bomastone Granade", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_bomastone_granade"))
+        self.add_item(Button(label="8mm", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_8mm"))
+        self.add_item(Button(label="Cometa T2-9", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_cometa_t2_9"))
+        self.add_item(Button(label=".44", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_44"))
+        self.add_item(Button(label="Catena RT.IV Autorifle", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_catena_rt_iv_autorifle"))
+        self.add_item(Button(label="Argenti R.II Rifle", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_argenti_r_ii_rifle"))
+        self.add_item(Button(label="Volta R.I Repeater", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_volta_r_i_repeater"))
+        self.add_item(Button(label="Fuscina PI.I", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_fuscina_pi_i"))
+        self.add_item(Button(label="KRR2-790 Omen", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_krr2_790_omen"))
+        self.add_item(Button(label="KRR3-792 Auger", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_krr3_792_auger"))
+        self.add_item(Button(label="7.62", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_762"))
+        self.add_item(Button(label="KRD1-750 Dragonfly", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_krd1_750_dragonfly"))
+        self.add_item(Button(label="Buckshot", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_buckshot"))
+        self.add_item(Button(label="The Pitch Gun MC.V", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_the_pitch_gun_mc_v"))
+        self.add_item(Button(label="Lionclaw MC.VIII", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_lionclaw_mc_viii"))
+        self.add_item(Button(label="9mm", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_9mm"))
+        self.add_item(Button(label="PT-815 Smoke Granade", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_pt_815_smoke_granade"))
+        self.add_item(Button(label="Green Ash Grenade", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_green_ash_grenade"))
+        self.add_item(Button(label="12.7mm", style=discord.ButtonStyle.secondary, custom_id="produce_small_arms_127mm"))
         
 # add all the custom ids for the small arms sub category to a list
 small_arms_custom_ids = ["produce_small_arms_dusk_ce_iii", "produce_small_arms_792mm", "produce_small_arms_catara_mo_ii", "produce_small_arms_krn886_127_gast_machine_gun", "produce_small_arms_bomastone_granade", "produce_small_arms_8mm", "produce_small_arms_cometa_t2_9", "produce_small_arms_44", "produce_small_arms_catena_rt_iv_autorifle", "produce_small_arms_argenti_r_ii_rifle", "produce_small_arms_volta_r_i_repeater", "produce_small_arms_fuscina_pi_i", "produce_small_arms_krr2_790_omen", "produce_small_arms_krr3_792_auger", "produce_small_arms_762", "produce_small_arms_krd1_750_dragonfly", "produce_small_arms_buckshot", "produce_small_arms_the_pitch_gun_mc_v", "produce_small_arms_lionclaw_mc_viii", "produce_small_arms_9mm", "produce_small_arms_pt_815_smoke_granade", "produce_small_arms_green_ash_grenade", "produce_small_arms_127mm"]
@@ -106,27 +106,27 @@ small_arms_custom_ids = ["produce_small_arms_dusk_ce_iii", "produce_small_arms_7
 class HeavyArmsButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)
-        self.add_item(Button(label="Typhon RA.XII", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_typhon_ra_xii"))
-        self.add_item(Button(label="20mm", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_20mm"))
-        self.add_item(Button(label="Venom C.III 35", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_venom_c_iii_35"))
-        self.add_item(Button(label="Bane 45", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_bane_45"))
-        self.add_item(Button(label="AP/RPG", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_ap_rpg"))
-        self.add_item(Button(label="ARC/RPG", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_arc_rpg"))
-        self.add_item(Button(label="Molten Wind V.11 Flame Torch", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_molten_wind_v_11_flame_torch"))
-        self.add_item(Button(label="KLG901-2 Lunair F", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_klg901_2_lunair_f"))
-        self.add_item(Button(label="Mounted Fissura GD.I", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_mounted_fissura_gd_i"))
-        self.add_item(Button(label="Tremola Grenade GPB-1", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_tremola_grenade_gpb_1"))
-        self.add_item(Button(label="Lamentum MM.IV", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_lamentum_mm_iv"))
-        self.add_item(Button(label="Daucus ISG.III", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_daucus_isg_iii"))
-        self.add_item(Button(label="30mm", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_30mm"))
-        self.add_item(Button(label="Cremari Mortar", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_cremari_mortar"))
-        self.add_item(Button(label="Flare Mortar Shell", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_flare_mortar_shell"))
-        self.add_item(Button(label="Shrapnel Mortar Shell", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_shrapnel_mortar_shell"))
-        self.add_item(Button(label="Mortar Shell", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_mortar_shell"))
-        self.add_item(Button(label="Ignifist 30", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_ignifist_30"))
-        self.add_item(Button(label="Mammon 91-B", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_mammon_91_b"))
-        self.add_item(Button(label="Anti-Tank Sticky Bomb", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_anti_tank_sticky_bomb"))
-        self.add_item(Button(label="RPG", style=discord.ButtonStyle.green, custom_id="produce_heavy_arms_rpg"))
+        self.add_item(Button(label="Typhon RA.XII", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_typhon_ra_xii"))
+        self.add_item(Button(label="20mm", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_20mm"))
+        self.add_item(Button(label="Venom C.III 35", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_venom_c_iii_35"))
+        self.add_item(Button(label="Bane 45", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_bane_45"))
+        self.add_item(Button(label="AP/RPG", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_ap_rpg"))
+        self.add_item(Button(label="ARC/RPG", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_arc_rpg"))
+        self.add_item(Button(label="Molten Wind V.11 Flame Torch", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_molten_wind_v_11_flame_torch"))
+        self.add_item(Button(label="KLG901-2 Lunair F", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_klg901_2_lunair_f"))
+        self.add_item(Button(label="Mounted Fissura GD.I", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_mounted_fissura_gd_i"))
+        self.add_item(Button(label="Tremola Grenade GPB-1", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_tremola_grenade_gpb_1"))
+        self.add_item(Button(label="Lamentum MM.IV", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_lamentum_mm_iv"))
+        self.add_item(Button(label="Daucus ISG.III", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_daucus_isg_iii"))
+        self.add_item(Button(label="30mm", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_30mm"))
+        self.add_item(Button(label="Cremari Mortar", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_cremari_mortar"))
+        self.add_item(Button(label="Flare Mortar Shell", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_flare_mortar_shell"))
+        self.add_item(Button(label="Shrapnel Mortar Shell", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_shrapnel_mortar_shell"))
+        self.add_item(Button(label="Mortar Shell", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_mortar_shell"))
+        self.add_item(Button(label="Ignifist 30", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_ignifist_30"))
+        self.add_item(Button(label="Mammon 91-B", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_mammon_91_b"))
+        self.add_item(Button(label="Anti-Tank Sticky Bomb", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_anti_tank_sticky_bomb"))
+        self.add_item(Button(label="RPG", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_arms_rpg"))
 
 # add all the custom ids for the heavy arms sub category to a list
 heavy_arms_custom_ids = ["produce_heavy_arms_typhon_ra_xii", "produce_heavy_arms_20mm", "produce_heavy_arms_venom_c_iii_35", "produce_heavy_arms_bane_45", "produce_heavy_arms_ap_rpg", "produce_heavy_arms_arc_rpg", "produce_heavy_arms_molten_wind_v_11_flame_torch", "produce_heavy_arms_klg901_2_lunair_f", "produce_heavy_arms_mounted_fissura_gd_i", "produce_heavy_arms_tremola_grenade_gpb_1", "produce_heavy_arms_lamentum_mm_iv", "produce_heavy_arms_daucus_isg_iii", "produce_heavy_arms_30mm", "produce_heavy_arms_cremari_mortar", "produce_heavy_arms_flare_mortar_shell", "produce_heavy_arms_shrapnel_mortar_shell", "produce_heavy_arms_mortar_shell", "produce_heavy_arms_ignifist_30", "produce_heavy_arms_mammon_91_b", "produce_heavy_arms_anti_tank_sticky_bomb", "produce_heavy_arms_rpg"]
@@ -135,11 +135,11 @@ heavy_arms_custom_ids = ["produce_heavy_arms_typhon_ra_xii", "produce_heavy_arms
 class HeavyAmmunitionButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)
-        self.add_item(Button(label="150mm", style=discord.ButtonStyle.green, custom_id="produce_heavy_ammunition_150mm"))
-        self.add_item(Button(label="120mm", style=discord.ButtonStyle.green, custom_id="produce_heavy_ammunition_120mm"))
-        self.add_item(Button(label="250mm", style=discord.ButtonStyle.green, custom_id="produce_heavy_ammunition_250mm"))
-        self.add_item(Button(label="68mm", style=discord.ButtonStyle.green, custom_id="produce_heavy_ammunition_68mm"))
-        self.add_item(Button(label="40mm", style=discord.ButtonStyle.green, custom_id="produce_heavy_ammunition_40mm"))
+        self.add_item(Button(label="150mm", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_ammunition_150mm"))
+        self.add_item(Button(label="120mm", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_ammunition_120mm"))
+        self.add_item(Button(label="250mm", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_ammunition_250mm"))
+        self.add_item(Button(label="68mm", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_ammunition_68mm"))
+        self.add_item(Button(label="40mm", style=discord.ButtonStyle.secondary, custom_id="produce_heavy_ammunition_40mm"))
 
 # add all the custom ids for the heavy ammunition sub category to a list
 heavy_ammunition_custom_ids = ["produce_heavy_ammunition_150mm", "produce_heavy_ammunition_120mm", "produce_heavy_ammunition_250mm", "produce_heavy_ammunition_68mm", "produce_heavy_ammunition_40mm"] 
@@ -148,26 +148,26 @@ heavy_ammunition_custom_ids = ["produce_heavy_ammunition_150mm", "produce_heavy_
 class UtilityButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)
-        self.add_item(Button(label="Barbed Wire", style=discord.ButtonStyle.green, custom_id="produce_utility_barbed_wire"))
-        self.add_item(Button(label="Buckhorn CCQ-18", style=discord.ButtonStyle.green, custom_id="produce_utility_buckhorn_ccq_18"))
-        self.add_item(Button(label="Binoculars", style=discord.ButtonStyle.green, custom_id="produce_utility_binoculars"))
-        self.add_item(Button(label="Hydra's Whisper", style=discord.ButtonStyle.green, custom_id="produce_utility_hydras_whisper"))
-        self.add_item(Button(label="Havoc Charge", style=discord.ButtonStyle.green, custom_id="produce_utility_havoc_charge"))
-        self.add_item(Button(label="Molten Wind V.II Ammo", style=discord.ButtonStyle.green, custom_id="produce_utility_molten_wind_v_ii_ammo"))
-        self.add_item(Button(label="Listening Kit", style=discord.ButtonStyle.green, custom_id="produce_utility_listening_kit"))
-        self.add_item(Button(label="Metal Beam", style=discord.ButtonStyle.green, custom_id="produce_utility_metal_beam"))
-        self.add_item(Button(label="Radio Backpack", style=discord.ButtonStyle.green, custom_id="produce_utility_radio_backpack"))
-        self.add_item(Button(label="Sandbag", style=discord.ButtonStyle.green, custom_id="produce_utility_sandbag"))
-        self.add_item(Button(label="Havoc Charge Denotator", style=discord.ButtonStyle.green, custom_id="produce_utility_havoc_charge_denotator"))
-        self.add_item(Button(label="Shovel", style=discord.ButtonStyle.green, custom_id="produce_utility_shovel"))
-        self.add_item(Button(label="Sledge Hammer", style=discord.ButtonStyle.green, custom_id="produce_utility_sledge_hammer"))
-        self.add_item(Button(label="Tripod", style=discord.ButtonStyle.green, custom_id="produce_utility_tripod"))
-        self.add_item(Button(label="Wind Stock", style=discord.ButtonStyle.green, custom_id="produce_utility_wind_stock"))
-        self.add_item(Button(label="Wrench", style=discord.ButtonStyle.green, custom_id="produce_utility_wrench"))
-        self.add_item(Button(label="Water Bucket", style=discord.ButtonStyle.green, custom_id="produce_utility_water_bucket"))
-        self.add_item(Button(label="Gas Mask", style=discord.ButtonStyle.green, custom_id="produce_utility_gas_mask"))
-        self.add_item(Button(label="Gas Mask Filter", style=discord.ButtonStyle.green, custom_id="produce_utility_gas_mask_filter"))
-        self.add_item(Button(label="Radio", style=discord.ButtonStyle.green, custom_id="produce_utility_radio"))
+        self.add_item(Button(label="Barbed Wire", style=discord.ButtonStyle.secondary, custom_id="produce_utility_barbed_wire"))
+        self.add_item(Button(label="Buckhorn CCQ-18", style=discord.ButtonStyle.secondary, custom_id="produce_utility_buckhorn_ccq_18"))
+        self.add_item(Button(label="Binoculars", style=discord.ButtonStyle.secondary, custom_id="produce_utility_binoculars"))
+        self.add_item(Button(label="Hydra's Whisper", style=discord.ButtonStyle.secondary, custom_id="produce_utility_hydras_whisper"))
+        self.add_item(Button(label="Havoc Charge", style=discord.ButtonStyle.secondary, custom_id="produce_utility_havoc_charge"))
+        self.add_item(Button(label="Molten Wind V.II Ammo", style=discord.ButtonStyle.secondary, custom_id="produce_utility_molten_wind_v_ii_ammo"))
+        self.add_item(Button(label="Listening Kit", style=discord.ButtonStyle.secondary, custom_id="produce_utility_listening_kit"))
+        self.add_item(Button(label="Metal Beam", style=discord.ButtonStyle.secondary, custom_id="produce_utility_metal_beam"))
+        self.add_item(Button(label="Radio Backpack", style=discord.ButtonStyle.secondary, custom_id="produce_utility_radio_backpack"))
+        self.add_item(Button(label="Sandbag", style=discord.ButtonStyle.secondary, custom_id="produce_utility_sandbag"))
+        self.add_item(Button(label="Havoc Charge Denotator", style=discord.ButtonStyle.secondary, custom_id="produce_utility_havoc_charge_denotator"))
+        self.add_item(Button(label="Shovel", style=discord.ButtonStyle.secondary, custom_id="produce_utility_shovel"))
+        self.add_item(Button(label="Sledge Hammer", style=discord.ButtonStyle.secondary, custom_id="produce_utility_sledge_hammer"))
+        self.add_item(Button(label="Tripod", style=discord.ButtonStyle.secondary, custom_id="produce_utility_tripod"))
+        self.add_item(Button(label="Wind Stock", style=discord.ButtonStyle.secondary, custom_id="produce_utility_wind_stock"))
+        self.add_item(Button(label="Wrench", style=discord.ButtonStyle.secondary, custom_id="produce_utility_wrench"))
+        self.add_item(Button(label="Water Bucket", style=discord.ButtonStyle.secondary, custom_id="produce_utility_water_bucket"))
+        self.add_item(Button(label="Gas Mask", style=discord.ButtonStyle.secondary, custom_id="produce_utility_gas_mask"))
+        self.add_item(Button(label="Gas Mask Filter", style=discord.ButtonStyle.secondary, custom_id="produce_utility_gas_mask_filter"))
+        self.add_item(Button(label="Radio", style=discord.ButtonStyle.secondary, custom_id="produce_utility_radio"))
 
 # add all the custom ids for the utility sub category to a list
 utility_custom_ids = ["produce_utility_barbed_wire", "produce_utility_buckhorn_ccq_18", "produce_utility_binoculars", "produce_utility_hydras_whisper", "produce_utility_havoc_charge", "produce_utility_molten_wind_v_ii_ammo", "produce_utility_listening_kit", "produce_utility_metal_beam", "produce_utility_radio_backpack", "produce_utility_sandbag", "produce_utility_havoc_charge_denotator", "produce_utility_shovel", "produce_utility_sledge_hammer", "produce_utility_tripod", "produce_utility_wind_stock", "produce_utility_wrench", "produce_utility_water_bucket", "produce_utility_gas_mask", "produce_utility_gas_mask_filter", "produce_utility_radio"]
@@ -176,7 +176,7 @@ utility_custom_ids = ["produce_utility_barbed_wire", "produce_utility_buckhorn_c
 class ResourceButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)
-        self.add_item(Button(label="Maintenance Supplies", style=discord.ButtonStyle.green, custom_id="produce_resource_maintenance_supplies"))
+        self.add_item(Button(label="Maintenance Supplies", style=discord.ButtonStyle.secondary, custom_id="produce_resource_maintenance_supplies"))
 
 # add all the custom ids for the resource sub category to a list
 resource_custom_ids = ["produce_resource_maintenance_supplies"]
@@ -185,11 +185,11 @@ resource_custom_ids = ["produce_resource_maintenance_supplies"]
 class MedicalButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)
-        self.add_item(Button(label="Bandage", style=discord.ButtonStyle.green, custom_id="produce_medical_bandage"))
-        self.add_item(Button(label="First Aid Kit", style=discord.ButtonStyle.green, custom_id="produce_medical_first_aid_kit"))
-        self.add_item(Button(label="Trauma Kit", style=discord.ButtonStyle.green, custom_id="produce_medical_trauma_kit"))
-        self.add_item(Button(label="Blood Plasma", style=discord.ButtonStyle.green, custom_id="produce_medical_blood_plasma"))
-        self.add_item(Button(label="Soldier Supplies", style=discord.ButtonStyle.green, custom_id="produce_medical_soldier_supplies"))
+        self.add_item(Button(label="Bandage", style=discord.ButtonStyle.secondary, custom_id="produce_medical_bandage"))
+        self.add_item(Button(label="First Aid Kit", style=discord.ButtonStyle.secondary, custom_id="produce_medical_first_aid_kit"))
+        self.add_item(Button(label="Trauma Kit", style=discord.ButtonStyle.secondary, custom_id="produce_medical_trauma_kit"))
+        self.add_item(Button(label="Blood Plasma", style=discord.ButtonStyle.secondary, custom_id="produce_medical_blood_plasma"))
+        self.add_item(Button(label="Soldier Supplies", style=discord.ButtonStyle.secondary, custom_id="produce_medical_soldier_supplies"))
 
 # add all the custom ids for the medical sub category to a list
 medical_custom_ids = ["produce_medical_bandage", "produce_medical_first_aid_kit", "produce_medical_trauma_kit", "produce_medical_blood_plasma", "produce_medical_soldier_supplies"]
@@ -198,15 +198,15 @@ medical_custom_ids = ["produce_medical_bandage", "produce_medical_first_aid_kit"
 class UniformsButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)
-        self.add_item(Button(label="Vilian Flak Vest", style=discord.ButtonStyle.green, custom_id="produce_uniforms_vilian_flak_vest"))
-        self.add_item(Button(label="Fabri Rucksack", style=discord.ButtonStyle.green, custom_id="produce_uniforms_fabri_rucksack"))
-        self.add_item(Button(label="Grenadier's Baldric", style=discord.ButtonStyle.green, custom_id="produce_uniforms_grenadiers_baldric"))
-        self.add_item(Button(label="Medic Fatigues", style=discord.ButtonStyle.green, custom_id="produce_uniforms_medic_fatigues"))
-        self.add_item(Button(label="Officialis Attire", style=discord.ButtonStyle.green, custom_id="produce_uniforms_officialis_attire"))
-        self.add_item(Button(label="Legionary's Oilcoat", style=discord.ButtonStyle.green, custom_id="produce_uniforms_legionarys_oilcoat"))
-        self.add_item(Button(label="Recon Camo", style=discord.ButtonStyle.green, custom_id="produce_uniforms_recon_camo"))
-        self.add_item(Button(label="Heavy Topcoat", style=discord.ButtonStyle.green, custom_id="produce_uniforms_heavy_topcoat"))
-        self.add_item(Button(label="Tankman's Coveralls", style=discord.ButtonStyle.green, custom_id="produce_uniforms_tankmans_coveralls"))
+        self.add_item(Button(label="Vilian Flak Vest", style=discord.ButtonStyle.secondary, custom_id="produce_uniforms_vilian_flak_vest"))
+        self.add_item(Button(label="Fabri Rucksack", style=discord.ButtonStyle.secondary, custom_id="produce_uniforms_fabri_rucksack"))
+        self.add_item(Button(label="Grenadier's Baldric", style=discord.ButtonStyle.secondary, custom_id="produce_uniforms_grenadiers_baldric"))
+        self.add_item(Button(label="Medic Fatigues", style=discord.ButtonStyle.secondary, custom_id="produce_uniforms_medic_fatigues"))
+        self.add_item(Button(label="Officialis Attire", style=discord.ButtonStyle.secondary, custom_id="produce_uniforms_officialis_attire"))
+        self.add_item(Button(label="Legionary's Oilcoat", style=discord.ButtonStyle.secondary, custom_id="produce_uniforms_legionarys_oilcoat"))
+        self.add_item(Button(label="Recon Camo", style=discord.ButtonStyle.secondary, custom_id="produce_uniforms_recon_camo"))
+        self.add_item(Button(label="Heavy Topcoat", style=discord.ButtonStyle.secondary, custom_id="produce_uniforms_heavy_topcoat"))
+        self.add_item(Button(label="Tankman's Coveralls", style=discord.ButtonStyle.secondary, custom_id="produce_uniforms_tankmans_coveralls"))
 
 # add all the custom ids for the uniforms sub category to a list
 uniforms_custom_ids = ["produce_uniforms_vilian_flak_vest", "produce_uniforms_fabri_rucksack", "produce_uniforms_grenadiers_baldric", "produce_uniforms_medic_fatigues", "produce_uniforms_officialis_attire", "produce_uniforms_legionarys_oilcoat", "produce_uniforms_recon_camo", "produce_uniforms_heavy_topcoat", "produce_uniforms_tankmans_coveralls"]
@@ -215,27 +215,27 @@ uniforms_custom_ids = ["produce_uniforms_vilian_flak_vest", "produce_uniforms_fa
 class VehiclesButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)
-        self.add_item(Button(label="R-12- Salus Ambulance", style=discord.ButtonStyle.green, custom_id="produce_vehicles_r_12_salus_ambulance"))
-        self.add_item(Button(label="T3 Xiphos", style=discord.ButtonStyle.green, custom_id="produce_vehicles_t3_xiphos"))
-        self.add_item(Button(label="R-15- Chariot", style=discord.ButtonStyle.green, custom_id="produce_vehicles_r_15_chariot"))
-        self.add_item(Button(label="AA-2 Battering Ram", style=discord.ButtonStyle.green, custom_id="produce_vehicles_aa_2_battering_ram"))
-        self.add_item(Button(label="G40 Sagittarii", style=discord.ButtonStyle.green, custom_id="produce_vehicles_g40_sagittarii"))
-        self.add_item(Button(label="BMS - Packmule Flatbed", style=discord.ButtonStyle.green, custom_id="produce_vehicles_bms_packmule_flatbed"))
-        self.add_item(Button(label="HH-A Javelin", style=discord.ButtonStyle.green, custom_id="produce_vehicles_hh_a_javelin"))
-        self.add_item(Button(label="AB-8 Acheron", style=discord.ButtonStyle.green, custom_id="produce_vehicles_ab_8_acheron"))
-        self.add_item(Button(label="120-68 Koronides Field Gun", style=discord.ButtonStyle.green, custom_id="produce_vehicles_120_68_koronides_field_gun"))
-        self.add_item(Button(label="HC-2 Scorpion", style=discord.ButtonStyle.green, custom_id="produce_vehicles_hc_2_scorpion"))
-        self.add_item(Button(label="H-5 Hatchet", style=discord.ButtonStyle.green, custom_id="produce_vehicles_h_5_hatchet"))
-        self.add_item(Button(label="86K-A Bardiche", style=discord.ButtonStyle.green, custom_id="produce_vehicles_86k_a_bardiche"))
-        self.add_item(Button(label="90T-V Nemesis", style=discord.ButtonStyle.green, custom_id="produce_vehicles_90t_v_nemesis"))
-        self.add_item(Button(label="85K-B Falchion", style=discord.ButtonStyle.green, custom_id="produce_vehicles_85k_b_falchion"))
-        self.add_item(Button(label="03MM Caster", style=discord.ButtonStyle.green, custom_id="produce_vehicles_03mm_caster"))
-        self.add_item(Button(label="R-5 Atlas Hauler", style=discord.ButtonStyle.green, custom_id="produce_vehicles_r_5_atlas_hauler"))
-        self.add_item(Button(label="RR-3 Stolon Tanker", style=discord.ButtonStyle.green, custom_id="produce_vehicles_rr_3_stolon_tanker"))
-        self.add_item(Button(label="R-1 Hauler", style=discord.ButtonStyle.green, custom_id="produce_vehicles_r_1_hauler"))
-        self.add_item(Button(label="T12 Actaeon Tankette", style=discord.ButtonStyle.green, custom_id="produce_vehicles_t12_actaeon_tankette"))
-        self.add_item(Button(label="UV-05A Argonaut", style=discord.ButtonStyle.green, custom_id="produce_vehicles_uv_05a_argonaut"))
-        self.add_item(Button(label="Roster 0 Junkwagon", style=discord.ButtonStyle.green, custom_id="produce_vehicles_roster_0_junkwagon"))
+        self.add_item(Button(label="R-12- Salus Ambulance", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_r_12_salus_ambulance"))
+        self.add_item(Button(label="T3 Xiphos", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_t3_xiphos"))
+        self.add_item(Button(label="R-15- Chariot", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_r_15_chariot"))
+        self.add_item(Button(label="AA-2 Battering Ram", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_aa_2_battering_ram"))
+        self.add_item(Button(label="G40 Sagittarii", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_g40_sagittarii"))
+        self.add_item(Button(label="BMS - Packmule Flatbed", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_bms_packmule_flatbed"))
+        self.add_item(Button(label="HH-A Javelin", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_hh_a_javelin"))
+        self.add_item(Button(label="AB-8 Acheron", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_ab_8_acheron"))
+        self.add_item(Button(label="120-68 Koronides Field Gun", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_120_68_koronides_field_gun"))
+        self.add_item(Button(label="HC-2 Scorpion", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_hc_2_scorpion"))
+        self.add_item(Button(label="H-5 Hatchet", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_h_5_hatchet"))
+        self.add_item(Button(label="86K-A Bardiche", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_86k_a_bardiche"))
+        self.add_item(Button(label="90T-V Nemesis", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_90t_v_nemesis"))
+        self.add_item(Button(label="85K-B Falchion", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_85k_b_falchion"))
+        self.add_item(Button(label="03MM Caster", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_03mm_caster"))
+        self.add_item(Button(label="R-5 Atlas Hauler", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_r_5_atlas_hauler"))
+        self.add_item(Button(label="RR-3 Stolon Tanker", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_rr_3_stolon_tanker"))
+        self.add_item(Button(label="R-1 Hauler", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_r_1_hauler"))
+        self.add_item(Button(label="T12 Actaeon Tankette", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_t12_actaeon_tankette"))
+        self.add_item(Button(label="UV-05A Argonaut", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_uv_05a_argonaut"))
+        self.add_item(Button(label="Roster 0 Junkwagon", style=discord.ButtonStyle.secondary, custom_id="produce_vehicles_roster_0_junkwagon"))
 
 # add all the custom ids for the vehicles sub category to a list
 vehicles_custom_ids = ["produce_vehicles_r_12_salus_ambulance", "produce_vehicles_t3_xiphos", "produce_vehicles_r_15_chariot", "produce_vehicles_aa_2_battering_ram", "produce_vehicles_g40_sagittarii", "produce_vehicles_bms_packmule_flatbed", "produce_vehicles_hh_a_javelin", "produce_vehicles_ab_8_acheron", "produce_vehicles_120_68_koronides_field_gun", "produce_vehicles_hc_2_scorpion", "produce_vehicles_h_5_hatchet", "produce_vehicles_86k_a_bardiche", "produce_vehicles_90t_v_nemesis", "produce_vehicles_85k_b_falchion", "produce_vehicles_03mm_caster", "produce_vehicles_r_5_atlas_hauler", "produce_vehicles_rr_3_stolon_tanker", "produce_vehicles_r_1_hauler", "produce_vehicles_t12_actaeon_tankette", "produce_vehicles_uv_05a_argonaut", "produce_vehicles_roster_0_junkwagon"]
@@ -244,13 +244,13 @@ vehicles_custom_ids = ["produce_vehicles_r_12_salus_ambulance", "produce_vehicle
 class ShippableStructureButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)
-        self.add_item(Button(label="50-500 Thunderbolt Cannon", style=discord.ButtonStyle.green, custom_id="produce_shippable_structure_50_500_thunderbolt_cannon"))
-        self.add_item(Button(label="Material Pallet", style=discord.ButtonStyle.green, custom_id="produce_shippable_structure_material_pallet"))
-        self.add_item(Button(label="Resource Container", style=discord.ButtonStyle.green, custom_id="produce_shippable_structure_resource_container"))
-        self.add_item(Button(label="Shipping Container", style=discord.ButtonStyle.green, custom_id="produce_shippable_structure_shipping_container"))
-        self.add_item(Button(label="DAE 1O-3 Polybolos", style=discord.ButtonStyle.green, custom_id="produce_shippable_structure_dae_1o_3_polybolos"))
-        self.add_item(Button(label="Concrete Mixer", style=discord.ButtonStyle.green, custom_id="produce_shippable_structure_concrete_mixer"))
-        self.add_item(Button(label="Liquid Container", style=discord.ButtonStyle.green, custom_id="produce_shippable_structure_liquid_container"))                  
+        self.add_item(Button(label="50-500 Thunderbolt Cannon", style=discord.ButtonStyle.secondary, custom_id="produce_shippable_structure_50_500_thunderbolt_cannon"))
+        self.add_item(Button(label="Material Pallet", style=discord.ButtonStyle.secondary, custom_id="produce_shippable_structure_material_pallet"))
+        self.add_item(Button(label="Resource Container", style=discord.ButtonStyle.secondary, custom_id="produce_shippable_structure_resource_container"))
+        self.add_item(Button(label="Shipping Container", style=discord.ButtonStyle.secondary, custom_id="produce_shippable_structure_shipping_container"))
+        self.add_item(Button(label="DAE 1O-3 Polybolos", style=discord.ButtonStyle.secondary, custom_id="produce_shippable_structure_dae_1o_3_polybolos"))
+        self.add_item(Button(label="Concrete Mixer", style=discord.ButtonStyle.secondary, custom_id="produce_shippable_structure_concrete_mixer"))
+        self.add_item(Button(label="Liquid Container", style=discord.ButtonStyle.secondary, custom_id="produce_shippable_structure_liquid_container"))                  
 
 # add all the custom ids for the shippable structure sub category to a list
 shippable_structure_custom_ids = ["produce_shippable_structure_50_500_thunderbolt_cannon", "produce_shippable_structure_material_pallet", "produce_shippable_structure_resource_container", "produce_shippable_structure_shipping_container", "produce_shippable_structure_dae_1o_3_polybolos", "produce_shippable_structure_concrete_mixer", "produce_shippable_structure_liquid_container"]
@@ -260,11 +260,11 @@ class CrateQuantityButtonView(View):
     def __init__(self, resource):
         super().__init__(timeout=None)  # Persistent view
         self.resource = resource  # Pass resource type for context
-        self.add_item(Button(label="10", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_10"))
-        self.add_item(Button(label="20", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_20"))
-        self.add_item(Button(label="30", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_30"))
-        self.add_item(Button(label="40", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_40"))
-        self.add_item(Button(label="50", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_50"))
+        self.add_item(Button(label="10", style=discord.ButtonStyle.secondary, custom_id=f"{resource}_produce_crate_10"))
+        self.add_item(Button(label="20", style=discord.ButtonStyle.secondary, custom_id=f"{resource}_produce_crate_20"))
+        self.add_item(Button(label="30", style=discord.ButtonStyle.secondary, custom_id=f"{resource}_produce_crate_30"))
+        self.add_item(Button(label="40", style=discord.ButtonStyle.secondary, custom_id=f"{resource}_produce_crate_40"))
+        self.add_item(Button(label="50", style=discord.ButtonStyle.secondary, custom_id=f"{resource}_produce_crate_50"))
         
 # add all the custom ids for the crate quantity selection to a list
 crate_quantity_custom_ids = ["produce_crate_10", "produce_crate_20", "produce_crate_30", "produce_crate_40", "produce_crate_50"]
@@ -273,7 +273,7 @@ crate_quantity_custom_ids = ["produce_crate_10", "produce_crate_20", "produce_cr
 class DeliveryButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)  # Persistent view
-        self.add_item(Button(label="Backline Stockpile", style=discord.ButtonStyle.green, custom_id="delivery_backline"))
-        self.add_item(Button(label="Midline Stockpile", style=discord.ButtonStyle.green, custom_id="delivery_midline"))
-        self.add_item(Button(label="Frontline", style=discord.ButtonStyle.green, custom_id="delivery_frontline"))
-        self.add_item(Button(label="Other", style=discord.ButtonStyle.green, custom_id="delivery_other"))
+        self.add_item(Button(label="Backline Stockpile", style=discord.ButtonStyle.secondary, custom_id="delivery_backline"))
+        self.add_item(Button(label="Midline Stockpile", style=discord.ButtonStyle.secondary, custom_id="delivery_midline"))
+        self.add_item(Button(label="Frontline", style=discord.ButtonStyle.secondary, custom_id="delivery_frontline"))
+        self.add_item(Button(label="Other", style=discord.ButtonStyle.secondary, custom_id="delivery_other"))
