@@ -16,6 +16,8 @@ scroop_quantity_custom_ids = ["salvage_scroop_1500", "salvage_scroop_2500", "sal
 refine_custom_ids = ["refine_basic_materials", "refine_diesel", "refine_explosive_powder", "refine_refined_materials", "refine_heavy_explosive_powder", "refine_gravel"]
 refine_quantity_custom_ids = ["refine_basic_materials_refine_1500", "refine_basic_materials_refine_2500", "refine_basic_materials_refine_5000", "refine_diesel_refine_1500", "refine_diesel_refine_2500", "refine_diesel_refine_5000", "refine_explosive_powder_refine_1500", "refine_explosive_powder_refine_2500", "refine_explosive_powder_refine_5000", "refine_refined_materials_refine_1500", "refine_refined_materials_refine_2500", "refine_refined_materials_refine_5000", "refine_heavy_explosive_powder_refine_1500", "refine_heavy_explosive_powder_refine_2500", "refine_heavy_explosive_powder_refine_5000", "refine_gravel_refine_1500", "refine_gravel_refine_2500", "refine_gravel_refine_5000"]
 
+produce_custom_ids = ["produce_small_arms", "produce_heavy_arms", "produce_heavy_ammunition", "produce_utility", "produce_resource", "produce_medical", "produce_uniforms", "produce_vehicles", "produce_shippable_structure"]
+
 # TaskDashboardCog class
 class TaskDashboardCog(commands.Cog):
     def __init__(self, bot):
@@ -127,7 +129,27 @@ class TaskDashboardCog(commands.Cog):
                 f"You selected **{custom_id}**. Choose a delivery location:",
                 view=DeliveryButtonView(),
                 ephemeral=True
-            )   
+            )
+        elif custom_id in produce_custom_ids:
+            view_mapping = {
+                "produce_small_arms": SmallArmsButtonView,
+                "produce_heavy_arms": HeavyArmsButtonView,
+                "produce_heavy_ammunition": HeavyAmmunitionButtonView,
+                "produce_utility": UtilityButtonView,
+                "produce_resource": ResourceButtonView,
+                "produce_medical": MedicalButtonView,
+                "produce_uniforms": UniformsButtonView,
+                "produce_vehicles": VehiclesButtonView,
+                "produce_shippable_structure": ShippableStructureButtonView
+            }
+            view_class = view_mapping.get(custom_id)
+            if view_class:
+                await interaction.response.send_message(
+                    f"You selected **{custom_id.capitalize()}**. Choose a quantity:",
+                    view=view_class(),
+                    ephemeral=True
+                )
+               
         else:
             await interaction.response.send_message(
                 "This feature is not implemented yet. Please check back later.",

@@ -53,10 +53,6 @@ class RefineQuantityButtonView(View):
         self.add_item(Button(label="1500", style=discord.ButtonStyle.green, custom_id=f"{resource}_refine_1500"))
         self.add_item(Button(label="2500", style=discord.ButtonStyle.green, custom_id=f"{resource}_refine_2500"))
         self.add_item(Button(label="5000", style=discord.ButtonStyle.green, custom_id=f"{resource}_refine_5000"))
-
-# combit the custome ids for the refine quantity buttons and create a list
-refine_quantity_custom_ids = ["refine_basic_materials_refine_1500", "refine_basic_materials_refine_2500", "refine_basic_materials_refine_5000", "refine_diesel_refine_1500", "refine_diesel_refine_2500", "refine_diesel_refine_5000", "refine_explosive_powder_refine_1500", "refine_explosive_powder_refine_2500", "refine_explosive_powder_refine_5000", "refine_refined_materials_refine_1500", "refine_refined_materials_refine_2500", "refine_refined_materials_refine_5000", "refine_heavy_explosive_powder_refine_1500", "refine_heavy_explosive_powder_refine_2500", "refine_heavy_explosive_powder_refine_5000", "refine_gravel_refine_1500", "refine_gravel_refine_2500", "refine_gravel_refine_5000"]
-
         
 # sub category selection for when a user selects produce, (Small Arms, Heavy Arms, Heavy Ammunition, Utility, Medical, Resource, Uniforms, Vehicles, Shippable Structure)
 class ProduceButtonView(View):
@@ -71,7 +67,10 @@ class ProduceButtonView(View):
         self.add_item(Button(label="Uniforms", style=discord.ButtonStyle.green, custom_id="produce_uniforms"))
         self.add_item(Button(label="Vehicles", style=discord.ButtonStyle.green, custom_id="produce_vehicles"))
         self.add_item(Button(label="Shippable Structure", style=discord.ButtonStyle.green, custom_id="produce_shippable_structure"))
-        
+
+# create a list from all the custom ids for the produce sub category
+produce_custom_ids = ["produce_small_arms", "produce_heavy_arms", "produce_heavy_ammunition", "produce_utility", "produce_resource", "produce_medical", "produce_uniforms", "produce_vehicles", "produce_shippable_structure"]
+
 # Sub category for Small arms item buttons (dusk ce.iii, 7.92mm, catara mo.ii, krn886-127 gast machine gun, bomastone granade, 8mm, Cometa t2-9, .44, catena rt.iv autorifle, argenti r.ii rifle, volta r.i repeater, fuscina pi.i, krr2-790 omen, krr3-792 auger, 7.62, krd1-750 dragonfly, buckshot, the pitch gun mc.v, lionclaw mc.viii, 9mm, pt-815 smoke granade, green ash grenade, 12.7mm)
 class SmallArmsButtonView(View):
     def __init__(self):
