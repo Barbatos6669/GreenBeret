@@ -4,7 +4,7 @@ from discord.ui import Button, View
 import logging
 
 # inport the buttons from the buttons.py file
-from cogs.buttons import DashboardView, ScroopButtonView, ScroopQuantityButtonView, DeliveryButtonView, RefineButtonView, ProduceButtonView, SmallArmsButtonView, HeavyArmsButtonView, HeavyAmmunitionButtonView, UtilityButtonView, ResourceButtonView, MedicalButtonView, UniformsButtonView, VehiclesButtonView, ShippableStructureButtonView, CrateQuantityButtonView
+from cogs.buttons import DashboardView, ScroopButtonView, ScroopQuantityButtonView, DeliveryButtonView, RefineButtonView, ProduceButtonView, SmallArmsButtonView, HeavyArmsButtonView, HeavyAmmunitionButtonView, UtilityButtonView, ResourceButtonView, MedicalButtonView, UniformsButtonView, VehiclesButtonView, ShippableStructureButtonView, CrateQuantityButtonView, RefineQuantityButtonView
 
 # Add this at the beginning of your file to configure logging
 logging.basicConfig(level=logging.INFO)
@@ -12,6 +12,9 @@ logging.basicConfig(level=logging.INFO)
 # List of custom_ids
 scroop_custom_ids = ["salvage", "components", "sulfur", "coal"]
 scroop_quantity_custom_ids = ["salvage_scroop_1500", "salvage_scroop_2500", "salvage_scroop_5000", "components_scroop_1500", "components_scroop_2500", "components_scroop_5000", "sulfur_scroop_1500", "sulfur_scroop_2500", "sulfur_scroop_5000", "coal_scroop_1500", "coal_scroop_2500", "coal_scroop_5000"]
+
+refine_custom_ids = ["refine_basic_materials", "refine_diesel", "refine_explosive_powder", "refine_refined_materials", "refine_heavy_explosive_powder", "refine_gravel"]
+refine_quantity_custom_ids = ["refine_basic_materials_refine_1500", "refine_basic_materials_refine_2500", "refine_basic_materials_refine_5000", "refine_diesel_refine_1500", "refine_diesel_refine_2500", "refine_diesel_refine_5000", "refine_explosive_powder_refine_1500", "refine_explosive_powder_refine_2500", "refine_explosive_powder_refine_5000", "refine_refined_materials_refine_1500", "refine_refined_materials_refine_2500", "refine_refined_materials_refine_5000", "refine_heavy_explosive_powder_refine_1500", "refine_heavy_explosive_powder_refine_2500", "refine_heavy_explosive_powder_refine_5000", "refine_gravel_refine_1500", "refine_gravel_refine_2500", "refine_gravel_refine_5000"]
 
 # TaskDashboardCog class
 class TaskDashboardCog(commands.Cog):
@@ -113,7 +116,18 @@ class TaskDashboardCog(commands.Cog):
                 view=DeliveryButtonView(),
                 ephemeral=True
             )
-        
+        elif custom_id in refine_custom_ids:
+            await interaction.response.send_message(
+                f"You selected **{custom_id.capitalize()}**. Please choose a quantity:",
+                view=RefineQuantityButtonView(custom_id),
+                ephemeral=True
+            )
+        elif custom_id in refine_quantity_custom_ids:
+            await interaction.response.send_message(
+                f"You selected **{custom_id}**. Choose a delivery location:",
+                view=DeliveryButtonView(),
+                ephemeral=True
+            )   
         else:
             await interaction.response.send_message(
                 "This feature is not implemented yet. Please check back later.",

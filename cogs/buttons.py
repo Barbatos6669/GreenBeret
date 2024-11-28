@@ -22,8 +22,6 @@ class ScroopButtonView(View):
         self.add_item(Button(label="Sulfur", style=discord.ButtonStyle.green, custom_id="sulfur"))
         self.add_item(Button(label="Coal", style=discord.ButtonStyle.green, custom_id="coal"))
 
-
-        
 # Buttons for Scroop resource quantity selection, will also be used for refine quantity selection to save time
 class ScroopQuantityButtonView(View):
     def __init__(self, resource):
@@ -32,7 +30,34 @@ class ScroopQuantityButtonView(View):
         self.add_item(Button(label="1500", style=discord.ButtonStyle.green, custom_id=f"{resource}_scroop_1500"))
         self.add_item(Button(label="2500", style=discord.ButtonStyle.green, custom_id=f"{resource}_scroop_2500"))
         self.add_item(Button(label="5000", style=discord.ButtonStyle.green, custom_id=f"{resource}_scroop_5000"))
+        
+# Buttons for Refine options
+class RefineButtonView(View):
+    def __init__(self):
+        super().__init__(timeout=None)  # Persistent view
+        self.add_item(Button(label="Basic Materials", style=discord.ButtonStyle.green, custom_id="refine_basic_materials"))
+        self.add_item(Button(label="Diesel", style=discord.ButtonStyle.green, custom_id="refine_diesel"))
+        self.add_item(Button(label="Explosive Powder", style=discord.ButtonStyle.green, custom_id="refine_explosive_powder"))
+        self.add_item(Button(label="Refined Materials", style=discord.ButtonStyle.green, custom_id="refine_refined_materials"))
+        self.add_item(Button(label="Heavy Explosive Powder", style=discord.ButtonStyle.green, custom_id="refine_heavy_explosive_powder"))
+        self.add_item(Button(label="Gravel", style=discord.ButtonStyle.green, custom_id="refine_gravel"))
+        
+# refine button custom ids list
+refine_custom_ids = ["refine_basic_materials", "refine_diesel", "refine_explosive_powder", "refine_refined_materials", "refine_heavy_explosive_powder", "refine_gravel"]
+        
+# Buttons for Refine resource quantity selection
+class RefineQuantityButtonView(View):
+    def __init__(self, resource):
+        super().__init__(timeout=None)  # Persistent view
+        self.resource = resource  # Pass resource type for context
+        self.add_item(Button(label="1500", style=discord.ButtonStyle.green, custom_id=f"{resource}_refine_1500"))
+        self.add_item(Button(label="2500", style=discord.ButtonStyle.green, custom_id=f"{resource}_refine_2500"))
+        self.add_item(Button(label="5000", style=discord.ButtonStyle.green, custom_id=f"{resource}_refine_5000"))
 
+# combit the custome ids for the refine quantity buttons and create a list
+refine_quantity_custom_ids = ["refine_basic_materials_refine_1500", "refine_basic_materials_refine_2500", "refine_basic_materials_refine_5000", "refine_diesel_refine_1500", "refine_diesel_refine_2500", "refine_diesel_refine_5000", "refine_explosive_powder_refine_1500", "refine_explosive_powder_refine_2500", "refine_explosive_powder_refine_5000", "refine_refined_materials_refine_1500", "refine_refined_materials_refine_2500", "refine_refined_materials_refine_5000", "refine_heavy_explosive_powder_refine_1500", "refine_heavy_explosive_powder_refine_2500", "refine_heavy_explosive_powder_refine_5000", "refine_gravel_refine_1500", "refine_gravel_refine_2500", "refine_gravel_refine_5000"]
+
+        
 # sub category selection for when a user selects produce, (Small Arms, Heavy Arms, Heavy Ammunition, Utility, Medical, Resource, Uniforms, Vehicles, Shippable Structure)
 class ProduceButtonView(View):
     def __init__(self):
@@ -215,16 +240,7 @@ class CrateQuantityButtonView(View):
         self.add_item(Button(label="40", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_40"))
         self.add_item(Button(label="50", style=discord.ButtonStyle.green, custom_id=f"{resource}_produce_crate_50"))
         
-# Buttons for Refine options
-class RefineButtonView(View):
-    def __init__(self):
-        super().__init__(timeout=None)  # Persistent view
-        self.add_item(Button(label="Basic Materials", style=discord.ButtonStyle.green, custom_id="refine_basic_materials"))
-        self.add_item(Button(label="Diesel", style=discord.ButtonStyle.green, custom_id="refine_diesel"))
-        self.add_item(Button(label="Explosive Powder", style=discord.ButtonStyle.green, custom_id="refine_explosive_powder"))
-        self.add_item(Button(label="Refined Materials", style=discord.ButtonStyle.green, custom_id="refine_refined_materials"))
-        self.add_item(Button(label="Heavy Explosive Powder", style=discord.ButtonStyle.green, custom_id="refine_heavy_explosive_powder"))
-        self.add_item(Button(label="Gravel", style=discord.ButtonStyle.green, custom_id="refine_gravel"))
+
         
 # Buttons for delivery options
 class DeliveryButtonView(View):
