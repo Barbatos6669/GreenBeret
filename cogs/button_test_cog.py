@@ -35,14 +35,34 @@ class FlowManagerCog(commands.Cog):
 
         # Check if the dashboard message already exists
         async for message in dashboard_channel.history(limit=10):
-            if message.author == self.bot.user and message.content.startswith("**Create Task Dashboard**"):
+            if message.author == self.bot.user and message.embeds and message.embeds[0].title == "Create Task Dashboard":
                 self.dashboard_message_id = message.id
                 return
 
         # If no dashboard message exists, create one
         view = self.create_dashboard_view()
-        dashboard_message = await dashboard_channel.send("**Create Task Dashboard**\nClick a button below to start.", view=view)
+        embed = discord.Embed(
+            title="Create Task Dashboard",
+            description=(
+                "**Welcome to the Task Management Dashboard!**\n"
+                "This board helps you create and manage tasks for your operations.\n\n"
+                "**How It Works:**\n"
+                "- Use the buttons below to start creating tasks.\n"
+                "- Follow the prompts to provide task details such as category, items, and quantity.\n"
+                "- Once created, tasks are posted in the task board channel.\n\n"
+                "**Task Lifecycle:**\n"
+                "Tasks go through the following stages:\n"
+                "1. 🟥 **Pending**: Task is awaiting someone to accept it.\n"
+                "2. 🟨 **In Progress**: Task is accepted and being worked on.\n"
+                "3. 🟩 **Completed**: Task has been successfully finished.\n\n"
+                "You can manage tasks using the buttons attached to each task post."
+            ),
+            color=discord.Color.blue()
+        )
+        embed.set_footer(text="Click a button below to start creating tasks.")
+        dashboard_message = await dashboard_channel.send(embed=embed, view=view)
         self.dashboard_message_id = dashboard_message.id
+
 
     def create_dashboard_view(self):
         """Create the view for the dashboard buttons."""
@@ -67,6 +87,9 @@ class FlowManagerCog(commands.Cog):
                 await interaction.response.send_message("Error: No flow linked to this button.", ephemeral=True)
                 return
 
+            # Acknowledge the interaction to prevent "This interaction failed"
+            await interaction.response.defer()
+
             # Initialize user state and start the flow
             self.user_states[user_id] = {
                 "current_step": next_step,
@@ -75,6 +98,7 @@ class FlowManagerCog(commands.Cog):
             await self.show_step(interaction, next_step)
 
         return button_callback
+
 
     async def show_step(self, interaction, step_name):
         """Show a step based on the JSON and user state."""
@@ -106,7 +130,8 @@ class FlowManagerCog(commands.Cog):
 
         # Send a new non-ephemeral message and store it for cleanup
         try:
-            message = await interaction.channel.send(content="Choose an option:", view=view)
+            embed = discord.Embed(title="Choose an option:")
+            message = await interaction.channel.send(embed=embed, view=view)
             self.user_messages[user_id] = message  # Save the message for cleanup
         except Exception as e:
             print(f"Error sending message: {e}")
@@ -139,9 +164,8 @@ class FlowManagerCog(commands.Cog):
 
         return button_callback
 
-
     async def create_task(self, interaction, user_state):
-        """Create a task at the end of a flow and post it to the task board."""
+        """Create a task at the end of a flow, save it to JSON, and post it to the task board."""
         task_board_channel_id = 1309637916057800814  # Replace with your task board channel ID
         task_channel = self.bot.get_channel(task_board_channel_id)
 
@@ -153,43 +177,131 @@ class FlowManagerCog(commands.Cog):
         flow_type = user_state["current_step"].split("_")[0]
         selections = user_state["selections"]
 
-        # Dynamically construct the task message based on the flow type
+        # Dynamically construct the task based on the flow type
         if flow_type == "scroop":
-            item_needed = selections.get("scroop_resource_selection", "Unknown")
-            quantity = selections.get("scroop_quantity_selection", "Unknown")
-            delivery_location = selections.get("scroop_delivery_selection", "Unknown")
+            task = {
+                "Created by": interaction.user.name,
+                "Item Needed": selections.get("scroop_resource_selection", "Unknown"),
+                "Quantity": selections.get("scroop_quantity_selection", "Unknown"),
+                "Delivery Location": selections.get("scroop_delivery_selection", "Unknown"),
+                "Assigned to": None,
+                "Status": "Pending",
+            }
         elif flow_type == "refine":
-            item_needed = selections.get("refine_resource_selection", "Unknown")
-            quantity = selections.get("refine_quantity_selection", "Unknown")
-            delivery_location = selections.get("refine_delivery_selection", "Unknown")
+            task = {
+                "Created by": interaction.user.name,
+                "Item Needed": selections.get("refine_resource_selection", "Unknown"),
+                "Quantity": selections.get("refine_quantity_selection", "Unknown"),
+                "Delivery Location": selections.get("refine_delivery_selection", "Unknown"),
+                "Assigned to": None,
+                "Status": "Pending",
+            }
         elif flow_type == "produce":
-            category = selections.get("produce_category_selection", "Unknown")
-            item_needed = selections.get("produce_item_selection", "Unknown")
-            quantity = selections.get("produce_quantity_selection", "Unknown")
-            delivery_location = selections.get("produce_delivery_selection", "Unknown")
+            task = {
+                "Created by": interaction.user.name,
+                "Category": selections.get("produce_category_selection", "Unknown"),
+                "Item Needed": selections.get("produce_item_selection", "Unknown"),
+                "Crates Needed": selections.get("produce_quantity_selection", "Unknown"),
+                "Delivery Location": selections.get("produce_delivery_selection", "Unknown"),
+                "Assigned to": None,
+                "Status": "Pending",
+            }
         else:
-            item_needed = "Unknown"
-            quantity = "Unknown"
-            delivery_location = "Unknown"
+            task = {
+                "Created by": interaction.user.name,
+                "Item Needed": "Unknown",
+                "Quantity": "Unknown",
+                "Delivery Location": "Unknown",
+                "Assigned to": None,
+                "Status": "Pending",
+            }
 
-        # Format the task message
-        if flow_type == "produce":
-            task_message = (
-                f"**New Task Created by {interaction.user.mention}:**\n"
-                f"- **Category:** {category}\n"
-                f"- **Item Needed:** {item_needed}\n"
-                f"- **Crates Needed:** {quantity}\n"
-                f"- **Deliver to:** {delivery_location}\n\n"
-                "React to this message to accept, complete, or abandon the task."
+        # Save the task to a JSON file
+        try:
+            with open("data/tasks.json", "r") as file:
+                task_list = json.load(file)
+        except (FileNotFoundError, json.JSONDecodeError):
+            task_list = []
+
+        task_list.append(task)
+        with open("data/tasks.json", "w") as file:
+            json.dump(task_list, file, indent=4)
+
+        # Function to get embed color based on task status
+        def get_status_color(status):
+            colors = {
+                "Pending": discord.Color.red(),
+                "In Progress": discord.Color.yellow(),
+                "Completed": discord.Color.green(),
+            }
+            return colors.get(status, discord.Color.default())
+
+        # Define the task embed
+        def create_embed():
+            task_description = "\n".join([f"- **{key}:** {value}" for key, value in task.items()])
+            return discord.Embed(
+                title="Task Status: " + task["Status"],
+                description=task_description,
+                color=get_status_color(task["Status"])
             )
-        else:
-            task_message = (
-                f"**New Task Created by {interaction.user.mention}:**\n"
-                f"- **Item Needed:** {item_needed}\n"
-                f"- **Quantity:** {quantity}\n"
-                f"- **Deliver to:** {delivery_location}\n\n"
-                "React to this message to accept, complete, or abandon the task."
-            )
+
+        # Define buttons and their callbacks
+        view = View()
+
+        # Accept button
+        accept_button = Button(label="Accept Task", style=discord.ButtonStyle.green)
+
+        async def accept_callback(interaction: discord.Interaction):
+            if task["Status"] == "Pending":
+                task["Status"] = "In Progress"
+                task["Assigned to"] = interaction.user.name
+                with open("data/tasks.json", "w") as file:
+                    json.dump(task_list, file, indent=4)
+                # Enable Complete and Abandon buttons
+                complete_button.disabled = False
+                abandon_button.disabled = False
+                accept_button.disabled = True
+                await interaction.response.edit_message(embed=create_embed(), view=view)
+
+        accept_button.callback = accept_callback
+        view.add_item(accept_button)
+
+        # Complete button
+        complete_button = Button(label="Complete Task", style=discord.ButtonStyle.primary, disabled=True)
+
+        async def complete_callback(interaction: discord.Interaction):
+            if task["Status"] == "In Progress" and task["Assigned to"] == interaction.user.name:
+                task["Status"] = "Completed"
+                with open("data/tasks.json", "w") as file:
+                    json.dump(task_list, file, indent=4)
+                # Disable buttons after completion
+                complete_button.disabled = True
+                abandon_button.disabled = True
+                await interaction.response.edit_message(embed=create_embed(), view=view)
+
+        complete_button.callback = complete_callback
+        view.add_item(complete_button)
+
+        # Abandon button
+        abandon_button = Button(label="Abandon Task", style=discord.ButtonStyle.danger, disabled=True)
+
+        async def abandon_callback(interaction: discord.Interaction):
+            if task["Status"] == "In Progress" and task["Assigned to"] == interaction.user.name:
+                task["Status"] = "Pending"
+                task["Assigned to"] = None
+                with open("data/tasks.json", "w") as file:
+                    json.dump(task_list, file, indent=4)
+                # Reset buttons to initial state
+                accept_button.disabled = False
+                complete_button.disabled = True
+                abandon_button.disabled = True
+                await interaction.response.edit_message(embed=create_embed(), view=view)
+
+        abandon_button.callback = abandon_callback
+        view.add_item(abandon_button)
+
+        # Post the task to the task board
+        await task_channel.send(embed=create_embed(), view=view)
 
         # Cleanup previous user message
         user_id = interaction.user.id
@@ -201,8 +313,6 @@ class FlowManagerCog(commands.Cog):
             except AttributeError:
                 pass
 
-        # Post the task to the task board
-        await task_channel.send(task_message)
-   
+
 async def setup(bot):
     await bot.add_cog(FlowManagerCog(bot))

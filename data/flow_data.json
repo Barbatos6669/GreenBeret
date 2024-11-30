@@ -54,7 +54,8 @@
   "produce_category_selection": {
     "buttons": [
       { "label": "Small Arms", "custom_id": "produce_small_arms", "next_step": "produce_small_arms_items", "style": "secondary" },
-      { "label": "Heavy Arms", "custom_id": "produce_heavy_arms", "next_step": "produce_heavy_arms_items", "style": "secondary" }
+      { "label": "Heavy Arms", "custom_id": "produce_heavy_arms", "next_step": "produce_heavy_arms_items", "style": "secondary" },
+      { "label": "Heavy Ammunition", "custom_id": "produce_heavy_ammunition", "next_step": "produce_heavy_ammunition", "style": "secondary" }
     ]
   },
   "produce_small_arms_items": {
@@ -67,6 +68,12 @@
     "buttons": [
       { "label": "Item 1", "custom_id": "produce_heavy_item_1", "next_step": "produce_quantity_selection", "style": "secondary" },
       { "label": "Item 2", "custom_id": "produce_heavy_item_2", "next_step": "produce_quantity_selection", "style": "secondary" }
+    ]
+  },
+  "produce_heavy_ammunition": {
+    "buttons": [
+      { "label": "Item 1", "custom_id": "produce_heavy_ammunition_item_1", "next_step": "produce_quantity_selection", "style": "secondary" },
+      { "label": "Item 2", "custom_id": "produce_heavy_ammunition_item_2", "next_step": "produce_quantity_selection", "style": "secondary" }
     ]
   },
   "produce_quantity_selection": {
