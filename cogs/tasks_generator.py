@@ -289,6 +289,7 @@ class FlowManagerCog(commands.Cog):
             if task["Status"] == "In Progress" and task["Assigned to"] == interaction.user.name:
                 task["Status"] = "Pending"
                 task["Assigned to"] = None
+                task["Message ID"] = interaction.message.id  # Add this line to save the message ID
                 with open("data/tasks.json", "w") as file:
                     json.dump(task_list, file, indent=4)
                 # Reset buttons to initial state
@@ -301,7 +302,12 @@ class FlowManagerCog(commands.Cog):
         view.add_item(abandon_button)
 
         # Post the task to the task board
-        await task_channel.send(embed=create_embed(), view=view)
+        message = await task_channel.send(embed=create_embed(), view=view)
+
+        # Save the message ID to the task
+        task["Message ID"] = message.id
+        with open("data/tasks.json", "w") as file:
+            json.dump(task_list, file, indent=4)
 
         # Cleanup previous user message
         user_id = interaction.user.id
