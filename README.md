@@ -1,54 +1,37 @@
-
-Here's a basic structure for a README.md file that you can use for your project. It highlights the purpose of your bot, the key features, how to set it up, and more.
-
-Task Management Bot
-A Discord bot designed to streamline task creation and management with a rich, interactive dashboard.
+GreenBeret
+A Discord bot designed for Foxhole players, inspired by the Ranger Handbook. This bot helps organize operations, assign tasks, manage logistics, and enhance RP gameplay.
 
 Features
-Interactive Dashboard: Create and manage tasks using a user-friendly interface.
-Task Lifecycle Management:
-🟥 Pending: Task is awaiting acceptance.
-🟨 In Progress: Task is being worked on.
-🟩 Completed: Task is finished.
-Custom Instructions: Add detailed instructions for tasks using a modal dialog.
-Recipe Integration: Items have associated recipes, descriptions, and production details.
-Dynamic Updates: Task status updates dynamically with buttons for accepting, completing, or abandoning tasks.
-JSON-Driven Data: Task and item data are stored and accessed through flow_data.json for maximum flexibility.
-Setup Instructions
+Task Management: Organize and assign tasks to squad members.
+Mission Briefs: Provide comprehensive mission details.
+Rank Progression: Track and manage player ranks.
+Resource Tracking: Monitor and manage logistics and resources.
+Interactive Dashboard: User-friendly interface for task and mission management.
+Dynamic Updates: Real-time task status updates.
 Requirements
 Python 3.9 or higher
-Discord.py library
+discord.py library
 JSON support (standard in Python)
 A Discord bot token
 Installation
 Clone the repository:
 
-bash
-Copy code
-git clone https://github.com/yourusername/task-management-bot.git
-cd task-management-bot
+git clone https://github.com/Barbatos6669/GreenBeret.git
+cd GreenBeret
 Install the required Python libraries:
 
-bash
-Copy code
 pip install discord.py
 Set up your flow_data.json file in the data/ directory with your custom task flow.
 
-Add your bot token in the main script or an environment variable:
+Add your bot token in the main script or as an environment variable:
 
-python
-Copy code
 TOKEN = "YOUR_DISCORD_BOT_TOKEN"
 Run the bot:
 
-bash
-Copy code
 python bot.py
 JSON Configuration Example
-Below is an example structure for flow_data.json:
+An example structure for flow_data.json:
 
-json
-Copy code
 {
     "dashboard": {
         "buttons": [
@@ -85,33 +68,20 @@ Copy code
 Usage
 Start your bot using the dashboard to create tasks.
 Click on the relevant buttons to provide task details.
-Use the Other button to add custom instructions.
+Use the "Other" button to add custom instructions.
 Manage tasks dynamically in the assigned task channel:
 Accept
 Complete
 Abandon
-Screenshots
-
-Example of the interactive task creation dashboard.
-
-
-Example of a task embed with dynamic buttons.
-
 Contributing
 Contributions are welcome! Please follow these steps:
 
 Fork the repository.
 Create a feature branch:
-bash
-Copy code
 git checkout -b feature-name
 Commit your changes:
-bash
-Copy code
 git commit -m "Add feature name"
 Push to your branch:
-bash
-Copy code
 git push origin feature-name
 Open a pull request.
 Future Features
@@ -120,7 +90,3 @@ Task Reminders: Notify users of pending tasks.
 Advanced Analytics: Track task completion rates and user performance.
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-Support
-For any issues or feature requests, please open an issue on GitHub.
-
