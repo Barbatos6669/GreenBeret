@@ -16,17 +16,9 @@
   },
   "scroop_quantity_selection": {
     "buttons": [
-      { "label": "1500", "custom_id": "scroop_1500", "next_step": "scroop_delivery_selection", "style": "secondary" },
-      { "label": "2500", "custom_id": "scroop_2500", "next_step": "scroop_delivery_selection", "style": "secondary" },
-      { "label": "5000", "custom_id": "scroop_5000", "next_step": "scroop_delivery_selection", "style": "secondary" }
-    ]
-  },
-  "scroop_delivery_selection": {
-    "buttons": [
-      { "label": "Backline", "custom_id": "delivery_backline", "next_step": null, "style": "secondary" },
-      { "label": "Midline", "custom_id": "delivery_midline", "next_step": null, "style": "secondary" },
-      { "label": "Frontline", "custom_id": "delivery_frontline", "next_step": null, "style": "secondary" },
-      { "label": "Other", "custom_id": "delivery_other", "next_step": null, "style": "secondary" }
+      { "label": "1500", "custom_id": "scroop_1500", "next_step": "delivery_selection", "style": "secondary" },
+      { "label": "2500", "custom_id": "scroop_2500", "next_step": "delivery_selection", "style": "secondary" },
+      { "label": "5000", "custom_id": "scroop_5000", "next_step": "delivery_selection", "style": "secondary" }
     ]
   },
   "refine_resource_selection": {
@@ -38,24 +30,16 @@
   },
   "refine_quantity_selection": {
     "buttons": [
-      { "label": "1500", "custom_id": "refine_1500", "next_step": "refine_delivery_selection", "style": "secondary" },
-      { "label": "2500", "custom_id": "refine_2500", "next_step": "refine_delivery_selection", "style": "secondary" },
-      { "label": "5000", "custom_id": "refine_5000", "next_step": "refine_delivery_selection", "style": "secondary" }
-    ]
-  },
-  "refine_delivery_selection": {
-    "buttons": [
-      { "label": "Backline", "custom_id": "delivery_backline", "next_step": null, "style": "secondary" },
-      { "label": "Midline", "custom_id": "delivery_midline", "next_step": null, "style": "secondary" },
-      { "label": "Frontline", "custom_id": "delivery_frontline", "next_step": null, "style": "secondary" },
-      { "label": "Other", "custom_id": "delivery_other", "next_step": null, "style": "secondary" }
+      { "label": "1500", "custom_id": "refine_1500", "next_step": "delivery_selection", "style": "secondary" },
+      { "label": "2500", "custom_id": "refine_2500", "next_step": "delivery_selection", "style": "secondary" },
+      { "label": "5000", "custom_id": "refine_5000", "next_step": "delivery_selection", "style": "secondary" }
     ]
   },
   "produce_category_selection": {
     "buttons": [
       { "label": "Small Arms", "custom_id": "produce_small_arms", "next_step": "produce_small_arms_items", "style": "secondary" },
       { "label": "Heavy Arms", "custom_id": "produce_heavy_arms", "next_step": "produce_heavy_arms_items", "style": "secondary" },
-      { "label": "Heavy Ammunition", "custom_id": "produce_heavy_ammunition", "next_step": "produce_heavy_ammunition", "style": "secondary" }
+      { "label": "Heavy Ammunition", "custom_id": "produce_heavy_ammunition", "next_step": "produce_heavy_ammunition_items", "style": "secondary" }
     ]
   },
   "produce_small_arms_items": {
@@ -70,7 +54,7 @@
       { "label": "Item 2", "custom_id": "produce_heavy_item_2", "next_step": "produce_quantity_selection", "style": "secondary" }
     ]
   },
-  "produce_heavy_ammunition": {
+  "produce_heavy_ammunition_items": {
     "buttons": [
       { "label": "Item 1", "custom_id": "produce_heavy_ammunition_item_1", "next_step": "produce_quantity_selection", "style": "secondary" },
       { "label": "Item 2", "custom_id": "produce_heavy_ammunition_item_2", "next_step": "produce_quantity_selection", "style": "secondary" }
@@ -78,15 +62,16 @@
   },
   "produce_quantity_selection": {
     "buttons": [
-      { "label": "10", "custom_id": "produce_crate_10", "next_step": "produce_delivery_selection", "style": "secondary" },
-      { "label": "20", "custom_id": "produce_crate_20", "next_step": "produce_delivery_selection", "style": "secondary" }
+      { "label": "10", "custom_id": "produce_crate_10", "next_step": "delivery_selection", "style": "secondary" },
+      { "label": "20", "custom_id": "produce_crate_20", "next_step": "delivery_selection", "style": "secondary" }
     ]
   },
-  "produce_delivery_selection": {
+  "delivery_selection": {
     "buttons": [
       { "label": "Backline", "custom_id": "delivery_backline", "next_step": null, "style": "secondary" },
       { "label": "Midline", "custom_id": "delivery_midline", "next_step": null, "style": "secondary" },
-      { "label": "Frontline", "custom_id": "delivery_frontline", "next_step": null, "style": "secondary" }
+      { "label": "Frontline", "custom_id": "delivery_frontline", "next_step": null, "style": "secondary" },
+      { "label": "Other", "custom_id": "delivery_other", "next_step": null, "style": "secondary" }
     ]
   }
 }
