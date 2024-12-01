@@ -56,6 +56,15 @@ class FlowManagerCog(commands.Cog):
         """Load JSON data from a file."""
         with open(file_path, "r") as file:
             return json.load(file)
+        
+    def load_flow_data(self):
+        """Load flow data from JSON file."""
+        try:
+            with open("data/flow_data.json", "r") as file:
+                self.flow_data = json.load(file)
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            print(f"Error loading flow data: {e}")
+            self.flow_data = {}
 
     @commands.Cog.listener()
     async def on_ready(self):
@@ -116,6 +125,7 @@ class FlowManagerCog(commands.Cog):
     def start_user_flow(self, button_data):
         """Create a callback to start a user-specific flow."""
         async def button_callback(interaction: discord.Interaction):
+            self.load_flow_data()  # Reload flow data in case it was updated
             user_id = interaction.user.id
             next_step = button_data.get("next_step")
 
@@ -139,6 +149,7 @@ class FlowManagerCog(commands.Cog):
 
     async def show_step(self, interaction, step_name):
         """Show a step based on the JSON and user state."""
+        self.load_flow_data()  # Reload flow data in case it was updated
         step_data = self.flow_data.get(step_name)
         if not step_data:
             await interaction.channel.send("Error: Step not found.")
@@ -282,8 +293,8 @@ class FlowManagerCog(commands.Cog):
                 name="Actions",
                 value=(
                     "React with:\n"
-                    "✅ to **Accept** the task\n"
-                    "✔️ to **Complete** the task\n"
+                    "🖐️ to **Accept** the task\n"
+                    "✅ to **Complete** the task\n"
                     "🛑 to **Abandon** the task"
                 ),
                 inline=False
@@ -295,8 +306,8 @@ class FlowManagerCog(commands.Cog):
         message = await task_channel.send(embed=embed)
 
         # Add reactions to the message
-        await message.add_reaction("✅")  # Accept Task
-        await message.add_reaction("✔️")  # Complete Task
+        await message.add_reaction("🖐️")  # Accept Task
+        await message.add_reaction("✅")  # Complete Task
         await message.add_reaction("🛑")  # Abandon Task
 
         # Save the message ID to the task
@@ -346,13 +357,13 @@ class FlowManagerCog(commands.Cog):
         await self.handle_task_reaction(task, message, emoji, user)
 
     async def handle_task_reaction(self, task, message, emoji, user):
-        if emoji == "✅":  # Accept Task
+        if emoji == "🖐️":  # Accept Task
             if task["Status"] == "Pending":
                 task["Status"] = "In Progress"
                 task["Assigned to"] = user.name
                 self.task_manager.update_task(task["Task ID"], task)
                 await self.update_task_message(task, message)
-        elif emoji == "✔️":  # Complete Task
+        elif emoji == "✅":  # Complete Task
             if task["Status"] == "In Progress" and task["Assigned to"] == user.name:
                 task["Status"] = "Completed"
                 self.task_manager.update_task(task["Task ID"], task)
@@ -390,8 +401,8 @@ class FlowManagerCog(commands.Cog):
             name="Actions",
             value=(
                 "React with:\n"
-                "✅ to **Accept** the task\n"
-                "✔️ to **Complete** the task\n"
+                "🖐️ to **Accept** the task\n"
+                "✅ to **Complete** the task\n"
                 "🛑 to **Abandon** the task"
             ),
             inline=False

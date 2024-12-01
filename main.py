@@ -24,7 +24,11 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 # List of cogs to load
 COGS_TO_LOAD = [
-    "cogs.tasks_generator", 
+    "cogs.tasks_generator",
+    "cogs.delivery_manager",
+    "cogs.delivery_point_display", 
+    "cogs.opord_manager",
+    "cogs.squad_manager",
 ]
 
 async def load_extensions():
