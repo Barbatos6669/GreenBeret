@@ -28,7 +28,7 @@ COGS_TO_LOAD = [
     "cogs.delivery_manager",
     "cogs.delivery_point_display", 
     "cogs.opord_manager",
-    "cogs.squad_manager",
+    "cogs.promotion",
 ]
 
 async def load_extensions():

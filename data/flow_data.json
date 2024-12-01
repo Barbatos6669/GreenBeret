@@ -217,9 +217,45 @@
                 "custom_id": "delivery_shell_factory",
                 "next_step": null,
                 "style": "secondary",
-                "hex": "The Downed Vale",
+                "hex": "Drowned Vale",
                 "location": "J10k4",
                 "password": ""
+            },
+            {
+                "label": "CGB-faclty",
+                "custom_id": "delivery_cgb-faclty",
+                "next_step": null,
+                "style": "secondary",
+                "hex": "Drowned Vale",
+                "location": "Baths",
+                "password": "123123123"
+            },
+            {
+                "label": "Vessel - Midline Facility",
+                "custom_id": "delivery_vessel_-_midline_facility",
+                "next_step": null,
+                "style": "secondary",
+                "hex": "Drowned Vale",
+                "location": "Vessel",
+                "password": ""
+            },
+            {
+                "label": "As",
+                "custom_id": "delivery_as",
+                "next_step": null,
+                "style": "secondary",
+                "hex": "Fff",
+                "location": "Cc",
+                "password": "111"
+            },
+            {
+                "label": "cgb-2-baths",
+                "custom_id": "delivery_cgb-2-baths",
+                "next_step": null,
+                "style": "secondary",
+                "hex": "Drowned Vale",
+                "location": "The baths",
+                "password": "123456"
             }
         ]
     }

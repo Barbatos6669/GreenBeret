@@ -74,8 +74,8 @@ class DeliveryPointManagerCog(commands.Cog):
 
         # Create Delivery Point Button
         delivery_point_button = discord.ui.Button(
-            label="Create Delivery Point",
-            custom_id="create_delivery_point",
+            label="Create Facility",
+            custom_id="create_Facility",
             style=discord.ButtonStyle.primary
         )
         delivery_point_button.callback = self.create_delivery_point_callback()
