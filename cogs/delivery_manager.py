@@ -67,7 +67,7 @@ class DeliveryPointManagerCog(commands.Cog):
         stockpile_button = discord.ui.Button(
             label="Create Stockpile",
             custom_id="create_stockpile",
-            style=discord.ButtonStyle.primary
+            style=discord.ButtonStyle.green
         )
         stockpile_button.callback = self.create_stockpile_callback()
         view.add_item(stockpile_button)
@@ -76,7 +76,7 @@ class DeliveryPointManagerCog(commands.Cog):
         delivery_point_button = discord.ui.Button(
             label="Create Facility",
             custom_id="create_Facility",
-            style=discord.ButtonStyle.primary
+            style=discord.ButtonStyle.green
         )
         delivery_point_button.callback = self.create_delivery_point_callback()
         view.add_item(delivery_point_button)

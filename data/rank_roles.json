@@ -1,0 +1,48 @@
+{
+    "ranks": {
+        "Officer": {
+            "Polemarchos": {
+                "role_id": 1312632184863199243,
+                "name": "War Leader",
+                "description": "These are the regiment's brightest and most talented leaders. Their job and mission is to maintain regiment morale and activity during their tenure."
+            },
+            "Strategos": {
+                "role_id": 1312632139677831238,
+                "name": "General",
+                "description": "This group of talented individuals are the leaders of CGB. They organize, lead, and encourage the regiment."
+            },
+            "Hypostrategos": {
+                "role_id": 1312632089648173067,
+                "name": "Sargent",
+                "description": "Veterans who lead squads and aid in current initiatives. They are the backbone of CGB leadership."
+            },
+            "Arkhon": {
+                "role_id": 1312632843448356946,
+                "name": "Magistrate",
+                "description": "Two enlisted members chosen each war to represent the enlisted in Officer discussions and fulfill specific tasks."
+            }
+        },
+        "Enlisted": {
+            "Apomakhos": {
+                "role_id": 1312632035780591657,
+                "name": "Veteran",
+                "description": "The regiment's finest and most loyal. They stand as examples of excellence and commitment."
+            },
+            "Eidikos": {
+                "role_id": 1312631992617144420,
+                "name": "Specialist",
+                "description": "Experienced players who have excelled in their respective fields."
+            },
+            "Hoplites": {
+                "role_id": 1312631928553209948,
+                "name": "Soldier",
+                "description": "Hardened soldiers representing the backbone of CGB’s enlisted force."
+            },
+            "Helots": {
+                "role_id": 1312631873884651550,
+                "name": "Recruit",
+                "description": "Initiates hand-picked for their potential and community strength. They must prove their worth."
+            }
+        }
+    }
+}

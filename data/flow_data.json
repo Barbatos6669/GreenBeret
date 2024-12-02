@@ -68,6 +68,24 @@
                 "custom_id": "scroop_5000",
                 "next_step": "delivery_selection",
                 "style": "secondary"
+            },
+            {
+                "label": "10000",
+                "custom_id": "scroop_10000",
+                "next_step": "delivery_selection",
+                "style": "secondary"
+            }, 
+            {
+                "label": "20000",
+                "custom_id": "scroop_20000",
+                "next_step": "delivery_selection",
+                "style": "secondary"
+            }, 
+            {
+                "label": "50000",
+                "custom_id": "scroop_50000",
+                "next_step": "delivery_selection",
+                "style": "secondary"
             }
         ]
     },
@@ -110,6 +128,24 @@
             {
                 "label": "5000",
                 "custom_id": "refine_5000",
+                "next_step": "delivery_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "10000",
+                "custom_id": "refine_10000",
+                "next_step": "delivery_selection",
+                "style": "secondary"
+            }, 
+            {
+                "label": "20000",
+                "custom_id": "refine_20000",
+                "next_step": "delivery_selection",
+                "style": "secondary"
+            }, 
+            {
+                "label": "50000",
+                "custom_id": "refine_50000",
                 "next_step": "delivery_selection",
                 "style": "secondary"
             }
@@ -198,6 +234,18 @@
                 "custom_id": "produce_crate_20",
                 "next_step": "delivery_selection",
                 "style": "secondary"
+            }, 
+            {
+                "label": "50",
+                "custom_id": "produce_crate_50",
+                "next_step": "delivery_selection",
+                "style": "secondary"
+            }, 
+            {
+                "label": "100",
+                "custom_id": "produce_crate_100",
+                "next_step": "delivery_selection",
+                "style": "secondary"
             }
         ]
     },
@@ -256,6 +304,33 @@
                 "hex": "Drowned Vale",
                 "location": "The baths",
                 "password": "123456"
+            },
+            {
+                "label": "Barb-stash",
+                "custom_id": "delivery_barb-stash",
+                "next_step": null,
+                "style": "secondary",
+                "hex": "Great March",
+                "location": "G1k5",
+                "password": "123456"
+            },
+            {
+                "label": "Rocket Man",
+                "custom_id": "delivery_rocket_man",
+                "next_step": null,
+                "style": "secondary",
+                "hex": "Great March",
+                "location": "D8k4",
+                "password": ""
+            },
+            {
+                "label": "m-sup building",
+                "custom_id": "delivery_m-sup_building",
+                "next_step": null,
+                "style": "secondary",
+                "hex": "Great March",
+                "location": "h9k4",
+                "password": ""
             }
         ]
     }

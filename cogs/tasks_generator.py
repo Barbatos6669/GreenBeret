@@ -50,6 +50,21 @@ class FlowManagerCog(commands.Cog):
         self.user_messages = {}  # Track user specific messages for cleanup
         self.dashboard_message_id = None  # Store the ID of the persistent dashboard message
         self.task_manager = TaskManager()  # Initialize the task manager
+        self.player_data_path = "data/player_data.json" # Path to player data JSON
+        self.player_data = self.load_player_data() # Load player data from JSON
+
+    def load_player_data(self):
+        """Load player data from the JSON file."""
+        try:
+            with open(self.player_data_path, "r") as file:
+                return json.load(file)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return {"players": {}}
+
+    def save_player_data(self):
+        """Save the updated player data to the JSON file."""
+        with open(self.player_data_path, "w") as file:
+            json.dump(self.player_data, file, indent=4)
 
     @staticmethod
     def load_json(file_path):
@@ -356,16 +371,55 @@ class FlowManagerCog(commands.Cog):
         # Handle the reaction
         await self.handle_task_reaction(task, message, emoji, user)
 
+    @commands.Cog.listener()
+    async def on_raw_reaction_add(self, payload):
+        if payload.user_id == self.bot.user.id:
+            return  # Ignore reactions added by the bot itself
+
+        # Get the message ID and check if it matches a task
+        message_id = payload.message_id
+        task = self.task_manager.get_task_by_message_id(message_id)
+        if not task:
+            return  # Not a task message
+
+        # Get the emoji used
+        emoji = str(payload.emoji)
+
+        # Fetch the channel and message
+        channel = self.bot.get_channel(payload.channel_id)
+        if not channel:
+            return
+        try:
+            message = await channel.fetch_message(message_id)
+        except discord.NotFound:
+            return
+
+        user = self.bot.get_user(payload.user_id)
+        if not user:
+            return
+
+        # Handle the reaction
+        await self.handle_task_reaction(task, message, emoji, user)
+
     async def handle_task_reaction(self, task, message, emoji, user):
-        if emoji == "🖐️":  # Accept Task
+        if emoji == "✅":  # Complete Task
+            if task["Status"] == "In Progress" and task["Assigned to"] == user.name:
+                task["Status"] = "Completed"
+
+                # Increment the user's task completion count
+                player_id = str(user.id)
+                if player_id in self.player_data["players"]:
+                    self.player_data["players"][player_id]["tasks_completed"] += 1
+                    self.player_data["players"][player_id]["war_points"] += 1
+                    self.save_player_data()
+
+                # Update the task
+                self.task_manager.update_task(task["Task ID"], task)
+                await self.update_task_message(task, message)
+        elif emoji == "🖐️":  # Accept Task
             if task["Status"] == "Pending":
                 task["Status"] = "In Progress"
                 task["Assigned to"] = user.name
-                self.task_manager.update_task(task["Task ID"], task)
-                await self.update_task_message(task, message)
-        elif emoji == "✅":  # Complete Task
-            if task["Status"] == "In Progress" and task["Assigned to"] == user.name:
-                task["Status"] = "Completed"
                 self.task_manager.update_task(task["Task ID"], task)
                 await self.update_task_message(task, message)
         elif emoji == "🛑":  # Abandon Task

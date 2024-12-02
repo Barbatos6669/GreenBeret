@@ -7,7 +7,7 @@ class OrderManagerCog(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        self.dashboard_channel_id = 1311021240386981928  # Replace with your dashboard channel ID
+        self.dashboard_channel_id = 1312603657577042000  # Replace with your dashboard channel ID
         self.operations_channel_id = 1312603657577042000  # Replace with your operations channel ID
         self.mission_wizard_message_id = None  # To store the message ID of the mission wizard message
 
