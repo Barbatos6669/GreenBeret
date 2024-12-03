@@ -1,89 +1,102 @@
 {
     "medals": [
-      {
-        "name": "Cross of Valor",
-        "category": "Combat",
-        "description": "Awarded for exceptional bravery in combat.",
-        "war_points": 100,
-        "image_url": "https://i.ibb.co/h2gWQNw/Cross-of-Valor.webp"
-      },
-      {
-        "name": "Marksman Medal",
-        "category": "Combat",
-        "description": "For achieving a high number of accurate kills or suppressive fire.",
-        "war_points": 75,
-        "image_url": "https://i.ibb.co/NNRtvfZ/Marksman-Medal.webp"
-      },
-      {
-        "name": "Defender Medal",
-        "category": "Combat",
-        "description": "For outstanding performance in defending critical points.",
-        "war_points": 80,
-        "image_url": "https://i.ibb.co/8XTgdRc/Defender-s-Medal.webp"
-      },
-      {
-        "name": "Logistics Excellence Medal",
-        "category": "Logistics",
-        "description": "For consistently providing supplies and materials to the frontlines.",
-        "war_points": 90,
-        "image_url": "https://i.ibb.co/Nxv8Pzv/Logistics-Excellence-Medal.webp"
-      },
-      {
-        "name": "Supply Chain Hero",
-        "category": "Logistics",
-        "description": "For organizing large-scale deliveries to multiple regions.",
-        "war_points": 100,
-        "image_url": "https://i.ibb.co/pZLdQwP/Supply-Chain-Hero.webp"
-      },
-      {
-        "name": "War Strategist Medal",
-        "category": "Leadership",
-        "description": "For planning and executing a successful operation.",
-        "war_points": 150,
-        "image_url": "https://i.ibb.co/QNKbTXk/War-Strategist-Medal.webp"
-      },
-      {
-        "name": "Mentor Badge",
-        "category": "Leadership",
-        "description": "For training new players and helping them integrate into the regiment.",
-        "war_points": 50,
-        "image_url": "https://i.ibb.co/JKJ9tgj/Mentor-s-Badge.webp"
-      },
-      {
-        "name": "Saboteur Medal",
-        "category": "Special Operations",
-        "description": "For successful sabotage missions behind enemy lines.",
-        "war_points": 120,
-        "image_url": "https://i.ibb.co/B2sjTJ9/Saboteur-s-Medal.webp"
-      },
-      {
-        "name": "Service Ribbon",
-        "category": "Dedication",
-        "description": "For long-standing service and loyalty to the regiment.",
-        "war_points": 50,
-        "image_url": "https://i.ibb.co/4RjKDQW/Service-Ribbon.webp"
-      },
-      {
-        "name": "War Veteran Medal",
-        "category": "Dedication",
-        "description": "For participation in multiple wars or campaigns.",
-        "war_points": 200,
-        "image_url": "War Veteran Medal"
-      },
-      {
-        "name": "Tank Commander Ribbon",
-        "category": "Vehicle Operations",
-        "description": "For excellence in operating and commanding tanks.",
-        "war_points": 90,
-        "image_url": "https://i.ibb.co/M5jGXf9/Tank-Commander-Ribbon.webp"
-      },
-      {
-        "name": "Recruiter Ribbon",
-        "category": "Regiment Contributions",
-        "description": "For recruiting and onboarding new members to the regiment.",
-        "war_points": 70,
-        "image_url": "https://i.ibb.co/C51LX4f/Recruiter-s-Ribbon.webp"
-      }
+        {
+            "name": "Cross of Valor",
+            "category": "Combat",
+            "description": "Awarded for exceptional bravery in combat.",
+            "war_points": 100,
+            "image_url": "https://i.ibb.co/h2gWQNw/Cross-of-Valor.webp"
+        },
+        {
+            "name": "Marksman Medal",
+            "category": "Combat",
+            "description": "For achieving a high number of accurate kills or suppressive fire.",
+            "war_points": 75,
+            "image_url": "https://i.ibb.co/NNRtvfZ/Marksman-Medal.webp"
+        },
+        {
+            "name": "Defender Medal",
+            "category": "Combat",
+            "description": "For outstanding performance in defending critical points.",
+            "war_points": 80,
+            "image_url": "https://i.ibb.co/8XTgdRc/Defender-s-Medal.webp"
+        },
+        {
+            "name": "Logistics Excellence Medal",
+            "category": "Logistics",
+            "description": "For consistently providing supplies and materials to the frontlines.",
+            "war_points": 90,
+            "image_url": "https://i.ibb.co/Nxv8Pzv/Logistics-Excellence-Medal.webp"
+        },
+        {
+            "name": "Supply Chain Hero",
+            "category": "Logistics",
+            "description": "For organizing large-scale deliveries to multiple regions.",
+            "war_points": 100,
+            "image_url": "https://i.ibb.co/pZLdQwP/Supply-Chain-Hero.webp"
+        },
+        {
+            "name": "War Strategist Medal",
+            "category": "Leadership",
+            "description": "For planning and executing a successful operation.",
+            "war_points": 150,
+            "image_url": "https://i.ibb.co/QNKbTXk/War-Strategist-Medal.webp"
+        },
+        {
+            "name": "Mentor Badge",
+            "category": "Leadership",
+            "description": "For training new players and helping them integrate into the regiment.",
+            "war_points": 50,
+            "image_url": "https://i.ibb.co/JKJ9tgj/Mentor-s-Badge.webp"
+        },
+        {
+            "name": "Saboteur Medal",
+            "category": "Special Operations",
+            "description": "For successful sabotage missions behind enemy lines.",
+            "war_points": 120,
+            "image_url": "https://i.ibb.co/B2sjTJ9/Saboteur-s-Medal.webp"
+        },
+        {
+            "name": "Service Ribbon",
+            "category": "Dedication",
+            "description": "For long-standing service and loyalty to the regiment.",
+            "war_points": 50,
+            "image_url": "https://i.ibb.co/4RjKDQW/Service-Ribbon.webp"
+        },
+        {
+            "name": "War Veteran Medal",
+            "category": "Dedication",
+            "description": "For participation in multiple wars or campaigns.",
+            "war_points": 200,
+            "image_url": "War Veteran Medal"
+        },
+        {
+            "name": "Tank Commander Ribbon",
+            "category": "Vehicle Operations",
+            "description": "For excellence in operating and commanding tanks.",
+            "war_points": 90,
+            "image_url": "https://i.ibb.co/M5jGXf9/Tank-Commander-Ribbon.webp"
+        },
+        {
+            "name": "Recruiter Ribbon",
+            "category": "Regiment Contributions",
+            "description": "For recruiting and onboarding new members to the regiment.",
+            "war_points": 70,
+            "image_url": "https://i.ibb.co/C51LX4f/Recruiter-s-Ribbon.webp"
+        },
+        {
+            "name": "Mammon Rusher",
+            "description": "Awarded to players who have demonstrated extraordinary bravery and skill in breaching enemy fortifications with Mammon Grenades in critical battles. This medal honors their relentless determination and contributions to the offensive efforts.",
+            "category": "Combat",
+            "war_points": 30,
+            "image_url": "https://i.ibb.co/gSNLNDj/Mammon-Rusher.webp"
+        },
+        {
+            "name": "Frontline Medic Medal",
+            "description": "Recognizes individuals who have risked their lives to save others on the battlefield. Awarded for exceptional dedication in providing medical aid under fire, reviving fallen comrades, and ensuring the survival of the regiment in critical moments.",
+            "category": "Support",
+            "war_points": 30,
+            "image_url": "https://i.ibb.co/BG12Jc5/Frontline-Medic-Medal.webp"
+        }
     ]
-  }
-  
+}

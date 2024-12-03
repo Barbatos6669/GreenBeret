@@ -74,13 +74,13 @@
                 "custom_id": "scroop_10000",
                 "next_step": "delivery_selection",
                 "style": "secondary"
-            }, 
+            },
             {
                 "label": "20000",
                 "custom_id": "scroop_20000",
                 "next_step": "delivery_selection",
                 "style": "secondary"
-            }, 
+            },
             {
                 "label": "50000",
                 "custom_id": "scroop_50000",
@@ -136,13 +136,13 @@
                 "custom_id": "refine_10000",
                 "next_step": "delivery_selection",
                 "style": "secondary"
-            }, 
+            },
             {
                 "label": "20000",
                 "custom_id": "refine_20000",
                 "next_step": "delivery_selection",
                 "style": "secondary"
-            }, 
+            },
             {
                 "label": "50000",
                 "custom_id": "refine_50000",
@@ -170,6 +170,42 @@
                 "custom_id": "produce_heavy_ammunition",
                 "next_step": "produce_heavy_ammunition_items",
                 "style": "secondary"
+            },
+            {
+                "label": "Utility",
+                "custom_id": "produce_utility",
+                "next_step": "produce_utility_items",
+                "style": "secondary"
+            },
+            {
+                "label": "Medical",
+                "custom_id": "produce_medical",
+                "next_step": "produce_medical_items",
+                "style": "secondary"
+            },
+            {
+                "label": "Resource",
+                "custom_id": "produce_resource",
+                "next_step": "produce_resource_items",
+                "style": "secondary"
+            },
+            {
+                "label": "Uniform",
+                "custom_id": "produce_uniform",
+                "next_step": "produce_uniform_items",
+                "style": "secondary"
+            },
+            {
+                "label": "Vehicle",
+                "custom_id": "produce_vehicle",
+                "next_step": "produce_vehicle_items",
+                "style": "secondary"
+            },
+            {
+                "label": "Shippable Structure",
+                "custom_id": "produce_shippable_structure",
+                "next_step": "produce_shippable_structure_items",
+                "style": "secondary"
             }
         ]
     },
@@ -186,20 +222,254 @@
                 "custom_id": "produce_792mm",
                 "next_step": "produce_quantity_selection",
                 "style": "secondary"
+            },
+            {
+                "label": "Catara mo.II",
+                "custom_id": "produce_catara_mo_ii",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "KRN886-127 Gast Machine Gun",
+                "custom_id": "produce_krn886_127",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Bomastone Grenade",
+                "custom_id": "produce_bomastone_grenade",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "8mm",
+                "custom_id": "produce_8mm",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Cometa T2-9",
+                "custom_id": "produce_cometa_t2_9",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": ".44",
+                "custom_id": "produce_44",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Cantena rt.IV Auto-Rifle",
+                "custom_id": "produce_cantena_rt_iv",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Argenti r.II Rifle",
+                "custom_id": "produce_argenti_r_ii",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Volta r.I Repeater",
+                "custom_id": "produce_volta_r_i",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Fuscina pi.I",
+                "custom_id": "produce_fuscina_pi_i",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "KRR2-790 Omen",
+                "custom_id": "produce_krr2_790",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "KRR3-792 Auger",
+                "custom_id": "produce_krr3_792",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "7.62mm",
+                "custom_id": "produce_7_62mm",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "KRF1-750 Dragonfly",
+                "custom_id": "produce_krf1_750",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Buckshot",
+                "custom_id": "produce_buckshot",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "The Pitch Gun mc.V",
+                "custom_id": "produce_the_pitch_gun_mc_v",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Lionclaw mc.VIII",
+                "custom_id": "produce_mc_viii",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "9mm",
+                "custom_id": "produce_9mm",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "PT-815 Smoke Grenade",
+                "custom_id": "produce_pt_815",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Green Ash Grenade",
+                "custom_id": "produce_green_ash_grenade",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "12.7mm",
+                "custom_id": "produce_12_7mm",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
             }
         ]
     },
     "produce_heavy_arms_items": {
         "buttons": [
             {
-                "label": "Item 1",
-                "custom_id": "produce_heavy_item_1",
+                "label": "Typon ra.XII",
+                "custom_id": "produce_typon_ra_xii",
                 "next_step": "produce_quantity_selection",
                 "style": "secondary"
             },
             {
-                "label": "Item 2",
-                "custom_id": "produce_heavy_item_2",
+                "label": "20mm",
+                "custom_id": "produce_20mm",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Venom c.II 35",
+                "custom_id": "produce_venom_c_ii_35",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Bane 45",
+                "custom_id": "produce_bane_45",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "AP/RPG",
+                "custom_id": "produce_ap_rpg",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "ARC/RPG",
+                "custom_id": "produce_arc_rpg",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Molten Wind v.II Flame Torch",
+                "custom_id": "produce_molten_wind_v_ii",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "KLG90-2 Lunaire F",
+                "custom_id": "produce_klg90_2",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Tremola Grenade GPb-1",
+                "custom_id": "produce_tremola_grenade",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Lamentum mm.IV",
+                "custom_id": "produce_lamentum_mm_iv",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Daucus isg.III",
+                "custom_id": "produce_daucus_isg_iii",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "30mm",
+                "custom_id": "produce_30mm",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Cremari Mortar",
+                "custom_id": "produce_cremai_mortar",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Flare Mortar Shell",
+                "custom_id": "produce_flare_mortar_shell",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Shrapnel Mortar Shell",
+                "custom_id": "produce_shrapnel_mortar_shell",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Mortar Shell",
+                "custom_id": "produce_mortar_shell",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Ignifist 30",
+                "custom_id": "produce_ignifist_30",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Mammon 91-b",
+                "custom_id": "produce_mammon_91_b",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Anti-Tank Sticky Bomb",
+                "custom_id": "produce_anti_tank_sticky_bomb",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "RPG",
+                "custom_id": "produce_rpg",
                 "next_step": "produce_quantity_selection",
                 "style": "secondary"
             }
@@ -208,14 +478,296 @@
     "produce_heavy_ammunition_items": {
         "buttons": [
             {
-                "label": "Item 1",
-                "custom_id": "produce_heavy_ammunition_item_1",
+                "label": "150mm",
+                "custom_id": "produce_150mm",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "120mm",
+                "custom_id": "produce_120mm",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "250mm",
+                "custom_id": "produce_250mm",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "68mm",
+                "custom_id": "produce_68mm",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "40mm",
+                "custom_id": "produce_40mm",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            }
+        ]
+    },
+    "produce_utility_items": {
+        "buttons": [
+            {
+                "label": "Barbed Wire",
+                "custom_id": "produce_barbed_wire",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Buckhorn CCQ-18",
+                "custom_id": "produce_buckhorn_ccq_18",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Binoculars",
+                "custom_id": "produce_binoculars",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Hydra's Whisper",
+                "custom_id": "produce_hydras_whisper",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Havoc Charge",
+                "custom_id": "produce_havoc_charge",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Molten Wind v.II Ammo",
+                "custom_id": "produce_molteb_wind_v_ii_ammo",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Listening Kit",
+                "custom_id": "produce_listening_kit",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Metal Beam",
+                "custom_id": "produce_metal_beam",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Radio Backpack",
+                "custom_id": "produce_radio_backpack",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Sandbag",
+                "custom_id": "produce_sandbag",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Havoc Charge Detonator",
+                "custom_id": "produce_havoc_charge_detonator",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Shovel",
+                "custom_id": "produce_shovel",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Sledge Hammer",
+                "custom_id": "produce_sledge_hammer",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Tripod",
+                "custom_id": "produce_Tripod",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Wind Sock",
+                "custom_id": "produce_wind_sock",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Wrench",
+                "custom_id": "produce_wrench",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Water Bucket",
+                "custom_id": "produce_water_bucket",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Gas Mask",
+                "custom_id": "produce_gas_mask",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Gas Mask Filter",
+                "custom_id": "produce_gas_mask_filter",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Radio",
+                "custom_id": "produce_radio",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            }
+        ]
+    },
+    "produce_medical_items": {
+        "buttons": [
+            {
+                "label": "Bandages",
+                "custom_id": "produce_bandages",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "First Aid Kit",
+                "custom_id": "produce_first_aid_kit",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Trauma Kit",
+                "custom_id": "produce_trauma_kit",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Blood Plasma",
+                "custom_id": "produce_blood_plasma",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Soldier Supplies",
+                "custom_id": "produce_soldier_supplies",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            }
+        ]
+    },
+    "produce_resource_items": {
+        "buttons": [
+            {
+                "label": "Maintenance Supplies",
+                "custom_id": "produce_main",
                 "next_step": "produce_quantity_selection",
                 "style": "secondary"
             },
             {
                 "label": "Item 2",
-                "custom_id": "produce_heavy_ammunition_item_2",
+                "custom_id": "produce_resource_item_2",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            }
+        ]
+    },
+    "produce_uniform_items": {
+        "buttons": [
+            {
+                "label": "Velian Flak Vest",
+                "custom_id": "produce_velian_flak_vest",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Fabri Rucksack",
+                "custom_id": "produce_fabric_rucksack",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Grenadier's Baldric",
+                "custom_id": "produce_grenadier_baldric",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Medic Fatigues",
+                "custom_id": "produce_medic_fatigues",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Officialis Attire",
+                "custom_id": "produce_officialis_attire",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Legionary's Oilcoat",
+                "custom_id": "produce_legionary_oilcoat",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Recon Camo",
+                "custom_id": "produce_recon_camo",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Heavy Topcoat",
+                "custom_id": "produce_heavy_topcoat",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "tankman's Coveralls",
+                "custom_id": "produce_tankman_coveralls",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            }
+        ]
+    },
+    "produce_vehicle_items": {
+        "buttons": [
+            {
+                "label": "Item 1",
+                "custom_id": "produce_vehicle_item_1",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Item 2",
+                "custom_id": "produce_vehicle_item_2",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            }
+        ]
+    },
+    "produce_shippable_structure_items": {
+        "buttons": [
+            {
+                "label": "Item 1",
+                "custom_id": "produce_structure_item_1",
+                "next_step": "produce_quantity_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "Item 2",
+                "custom_id": "produce_structure_item_2",
                 "next_step": "produce_quantity_selection",
                 "style": "secondary"
             }
@@ -223,6 +775,18 @@
     },
     "produce_quantity_selection": {
         "buttons": [
+            {
+                "label": "1",
+                "custom_id": "produce_crate_1",
+                "next_step": "delivery_selection",
+                "style": "secondary"
+            },
+            {
+                "label": "5",
+                "custom_id": "produce_crate_5",
+                "next_step": "delivery_selection",
+                "style": "secondary"
+            },
             {
                 "label": "10",
                 "custom_id": "produce_crate_10",
@@ -234,13 +798,13 @@
                 "custom_id": "produce_crate_20",
                 "next_step": "delivery_selection",
                 "style": "secondary"
-            }, 
+            },
             {
                 "label": "50",
                 "custom_id": "produce_crate_50",
                 "next_step": "delivery_selection",
                 "style": "secondary"
-            }, 
+            },
             {
                 "label": "100",
                 "custom_id": "produce_crate_100",
@@ -252,85 +816,45 @@
     "delivery_selection": {
         "buttons": [
             {
-                "label": "cgb-sit-1",
+                "label": "CGB_Sit1",
                 "custom_id": "delivery_cgb-sit-1",
                 "next_step": null,
                 "style": "secondary",
                 "hex": "Great March",
                 "location": "Sitaria",
-                "password": "123456"
+                "password": "123456",
+                "small_arms": [
+                    {
+                        "name": "Dusk CE.III",
+                        "quantity": 10
+                    }
+                ],
+                "heavy_arms": [],
+                "heavy_ammunition": [],
+                "utility": [],
+                "medical": [],
+                "resource": [],
+                "uniform": [],
+                "vehicle": [],
+                "shippable_structure": []
             },
             {
-                "label": "Shell Factory",
-                "custom_id": "delivery_shell_factory",
-                "next_step": null,
-                "style": "secondary",
-                "hex": "Drowned Vale",
-                "location": "J10k4",
-                "password": ""
-            },
-            {
-                "label": "CGB-faclty",
-                "custom_id": "delivery_cgb-faclty",
-                "next_step": null,
-                "style": "secondary",
-                "hex": "Drowned Vale",
-                "location": "Baths",
-                "password": "123123123"
-            },
-            {
-                "label": "Vessel - Midline Facility",
-                "custom_id": "delivery_vessel_-_midline_facility",
-                "next_step": null,
-                "style": "secondary",
-                "hex": "Drowned Vale",
-                "location": "Vessel",
-                "password": ""
-            },
-            {
-                "label": "As",
-                "custom_id": "delivery_as",
-                "next_step": null,
-                "style": "secondary",
-                "hex": "Fff",
-                "location": "Cc",
-                "password": "111"
-            },
-            {
-                "label": "cgb-2-baths",
-                "custom_id": "delivery_cgb-2-baths",
-                "next_step": null,
-                "style": "secondary",
-                "hex": "Drowned Vale",
-                "location": "The baths",
-                "password": "123456"
-            },
-            {
-                "label": "Barb-stash",
-                "custom_id": "delivery_barb-stash",
+                "label": "CGB-Sit2",
+                "custom_id": "delivery_cgb-sit2",
                 "next_step": null,
                 "style": "secondary",
                 "hex": "Great March",
-                "location": "G1k5",
-                "password": "123456"
-            },
-            {
-                "label": "Rocket Man",
-                "custom_id": "delivery_rocket_man",
-                "next_step": null,
-                "style": "secondary",
-                "hex": "Great March",
-                "location": "D8k4",
-                "password": ""
-            },
-            {
-                "label": "m-sup building",
-                "custom_id": "delivery_m-sup_building",
-                "next_step": null,
-                "style": "secondary",
-                "hex": "Great March",
-                "location": "h9k4",
-                "password": ""
+                "location": "Sitaria",
+                "password": "123456",
+                "small_arms": [],
+                "heavy_arms": [],
+                "heavy_ammunition": [],
+                "utility": [],
+                "medical": [],
+                "resource": [],
+                "uniform": [],
+                "vehicle": [],
+                "shippable_structure": []
             }
         ]
     }

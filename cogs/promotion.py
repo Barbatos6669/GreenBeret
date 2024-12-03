@@ -36,6 +36,7 @@ class PromotionCog(commands.Cog):
 
         # Promotion point requirements for each rank
         self.war_point_requirements = {
+            1312631873884651550: 0,      # ΕΙΛΩΤΕΣ (Recruit)
             1312631928553209948: 100,  # ΟΠΛΙΤΕΣ (Soldier)
             1312631992617144420: 2000,  # ΕΙΔΙΚΟΣ (Specialist)
             1312632035780591657: 4000,  # ΑΠΟΜΑΧΟΣ (Veteran)
@@ -246,7 +247,18 @@ class PromotionApprovalView(View):
     def disable_buttons(self):
         self.approve_button.disabled = True
         self.reject_button.disabled = True
-
+        
+    # automatically assign recruit role to all members who do not have a one of the promotion roles
+    @commands.Cog.listener()
+    async def on_member_join(self, member):
+        """Event listener to assign the Recruit role to new members."""
+        if not any(role.id in self.cog.promotion_roles for role in member.roles):
+            recruit_role = member.guild.get_role(1312631873884651550)  # ΕΙΛΩΤΕΣ (Recruit)
+            if recruit_role:
+                await member.add_roles(recruit_role, reason="New member joined the server.")
+                await member.send(f"Welcome to the server! You have been assigned the {recruit_role.name} role.")
+                
+                
 
 async def setup(bot):
     await bot.add_cog(PromotionCog(bot))

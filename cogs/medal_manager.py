@@ -126,6 +126,68 @@ class MedalManager(commands.Cog):
         embed.add_field(name="Medals", value=medal_list, inline=False)
 
         await ctx.send(embed=embed)
+        
+    @commands.command(name="medals") # example: !medals
+    async def medals(self, ctx):
+        """Display a list of all available medals."""
+        embed = discord.Embed(
+            title="Medals",
+            color=discord.Color.gold()
+        )
+        for medal in self.medals:
+            embed.add_field(name=medal["name"], value=medal["description"], inline=False)
+        await ctx.send(embed=embed)
+        
+    # Create a new medal
+    @commands.command(name="create_medal")
+    async def create_medal(self, ctx):
+        """Create a new medal with prompts to avoid user errors."""
+        def check(m):
+            return m.author == ctx.author and m.channel == ctx.channel
 
+        new_medal = {}
+
+        await ctx.send("Please enter the name of the medal.")
+        name = await self.bot.wait_for("message", check=check)
+        new_medal["name"] = name.content
+
+        await ctx.send("Please enter the description of the medal.")
+        description = await self.bot.wait_for("message", check=check)
+        new_medal["description"] = description.content
+
+        await ctx.send("Please enter the category of the medal.")
+        category = await self.bot.wait_for("message", check=check)
+        new_medal["category"] = category.content
+
+        await ctx.send("Please enter the war points of the medal.")
+        war_points = await self.bot.wait_for("message", check=check)
+        try:
+            new_medal["war_points"] = int(war_points.content)
+        except ValueError:
+            await ctx.send("Invalid input for war points. Please enter an integer value.")
+            return
+
+        await ctx.send("Please enter the image URL of the medal (or type 'none' if there is no image).")
+        image_url = await self.bot.wait_for("message", check=check)
+        new_medal["image_url"] = image_url.content if image_url.content.lower() != 'none' else None
+
+        self.medals.append(new_medal)
+        with open(self.medal_data_path, "w") as file:
+            json.dump({"medals": self.medals}, file, indent=4)
+
+        await ctx.send(f"Medal '{new_medal['name']}' created successfully.")
+        
+    @commands.command(name="delete_medal") # example: !delete_medal MedalName
+    async def delete_medal(self, ctx, name: str):
+        """Delete a medal."""
+        medal = next((m for m in self.medals if m["name"].lower() == name.lower()), None)
+        if medal:
+            self.medals.remove(medal)
+            with open(self.medal_data_path, "w") as file:
+                json.dump({"medals": self.medals}, file, indent=4)
+            await ctx.send(f"Medal '{name}' deleted successfully.")
+        else:
+            await ctx.send(f"Medal '{name}' not found.")       
+        
 async def setup(bot):
     await bot.add_cog(MedalManager(bot))

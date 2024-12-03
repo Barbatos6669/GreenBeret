@@ -31,6 +31,7 @@ COGS_TO_LOAD = [
     "cogs.promotion",
     "cogs.player_stats",
     "cogs.medal_manager",
+
 ]
 
 async def load_extensions():

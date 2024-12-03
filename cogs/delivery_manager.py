@@ -113,7 +113,16 @@ class DeliveryPointManagerCog(commands.Cog):
                         "style": "secondary",
                         "hex": hex_value,
                         "location": location_value,
-                        "password": password_value
+                        "password": password_value,
+                        "small_arms": [],
+                        "heavy_arms": [],
+                        "heavy_ammunition": [],
+                        "utility": [],
+                        "medical": [],
+                        "resource": [],
+                        "uniform": [],
+                        "vehicle": [],
+                        "shippable_structure": []
                     }
 
                     # Add to flow_data under 'delivery_selection'
@@ -164,7 +173,16 @@ class DeliveryPointManagerCog(commands.Cog):
                         "style": "secondary",
                         "hex": hex_value,
                         "location": location_value,
-                        "password": ""  # No password for general delivery points
+                        "password": "",  # No password for general delivery points
+                        "small_arms": [],
+                        "heavy_arms": [],
+                        "heavy_ammunition": [],
+                        "utility": [],
+                        "medical": [],
+                        "resource": [],
+                        "uniform": [],
+                        "vehicle": [],
+                        "shippable_structure": []
                     }
 
                     # Add to flow_data under 'delivery_selection'
