@@ -855,6 +855,24 @@
                 "uniform": [],
                 "vehicle": [],
                 "shippable_structure": []
+            },
+            {
+                "label": "CGB-Sit3",
+                "custom_id": "delivery_cgb-sit3",
+                "next_step": null,
+                "style": "secondary",
+                "hex": "Great March",
+                "location": "Sitaria",
+                "password": "123456",
+                "small_arms": [],
+                "heavy_arms": [],
+                "heavy_ammunition": [],
+                "utility": [],
+                "medical": [],
+                "resource": [],
+                "uniform": [],
+                "vehicle": [],
+                "shippable_structure": []
             }
         ]
     }
