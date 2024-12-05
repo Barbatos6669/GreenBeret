@@ -32,6 +32,7 @@ COGS_TO_LOAD = [
     "cogs.player_stats",
     "cogs.medal_manager",
     "cogs.mass_order_cog",
+    "cogs.stockpile_manager",
 
 ]
 

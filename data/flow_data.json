@@ -847,8 +847,22 @@
                 "location": "Sitaria",
                 "password": "123456",
                 "small_arms": [],
-                "heavy_arms": [],
-                "heavy_ammunition": [],
+                "heavy_arms": [
+                    {
+                        "name": "KLG90-2 Lunaire F",
+                        "quantity": 100
+                    },
+                    {
+                        "name": "30mm",
+                        "quantity": 30
+                    }
+                ],
+                "heavy_ammunition": [
+                    {
+                        "name": "150mm",
+                        "quantity": 40
+                    }
+                ],
                 "utility": [],
                 "medical": [],
                 "resource": [],
@@ -864,14 +878,41 @@
                 "hex": "Great March",
                 "location": "Sitaria",
                 "password": "123456",
-                "small_arms": [],
+                "small_arms": [
+                    {
+                        "name": "Dusk CE.III",
+                        "quantity": 100
+                    },
+                    {
+                        "name": "7.92mm",
+                        "quantity": 100
+                    },
+                    {
+                        "name": "8mm",
+                        "quantity": 30
+                    },
+                    {
+                        "name": "Argenti r.II Rifle",
+                        "quantity": 25
+                    }
+                ],
                 "heavy_arms": [],
                 "heavy_ammunition": [],
                 "utility": [],
-                "medical": [],
+                "medical": [
+                    {
+                        "name": "Soldier Supplies",
+                        "quantity": 50
+                    }
+                ],
                 "resource": [],
                 "uniform": [],
-                "vehicle": [],
+                "vehicle": [
+                    {
+                        "name": "Item 1",
+                        "quantity": 1
+                    }
+                ],
                 "shippable_structure": []
             }
         ]
